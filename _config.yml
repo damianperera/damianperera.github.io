@@ -20,10 +20,10 @@ defaults:
       layout: "post"
 
 projects:
-  sort_by: pushed
+  sort_by: stars
   sort_by options:
   #   - pushed
-    - stars
+  #  - stars
   limit: 9
   exclude:
     archived: false
