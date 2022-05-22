@@ -1,6 +1,9 @@
 layout: sidebar
 style: dark
 
+user:
+  - hireable: false
+
 plugins:
   - jekyll-octicons
   - jekyll-github-metadata
