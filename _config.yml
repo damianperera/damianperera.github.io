@@ -29,7 +29,7 @@ projects:
     archived: false
     forks: true
     projects:
-    # - repo-name
+     - news
 
 social_media:
   # behance: your_username
