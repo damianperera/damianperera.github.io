@@ -40,21 +40,21 @@ social_media:
   medium: damianperera
   # stackoverflow: your_user_id
   # telegram: your_username
-  # twitter: your_username
+  twitter: damianperera
   # unsplash: your_username
   # vk: your_username
   # website: http://your_website_url
   # youtube: your_username
 
 topics:
-  - name: gRPC
+  - name: OpenWrt
     web_url: https://grpc.io/
-    image_url: https://grpc.io/img/logos/grpc-icon-color.png
+    # image_url: https://grpc.io/img/logos/grpc-icon-color.png
 
-  - name: Spring
+  - name: Raspberry Pi
     web_url: https://spring.io/
-    image_url: https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg
+    # image_url: https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg
 
   - name: Amazon Web Services
     web_url: https://aws.amazon.com/
-    image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png
+    # image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png
