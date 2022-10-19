@@ -48,13 +48,13 @@ social_media:
 
 topics:
   - name: OpenWrt
-    web_url: https://grpc.io/
-    # image_url: https://grpc.io/img/logos/grpc-icon-color.png
+    web_url: https://openwrt.org/
+    image_url: https://avatars.githubusercontent.com/u/2528830?s=280&v=4
 
   - name: Raspberry Pi
-    web_url: https://spring.io/
-    # image_url: https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg
+    web_url: https://www.raspberrypi.com/software/
+    image_url: https://upload.wikimedia.org/wikipedia/de/thumb/c/cb/Raspberry_Pi_Logo.svg/1200px-Raspberry_Pi_Logo.svg.png
 
-  - name: Amazon Web Services
-    web_url: https://aws.amazon.com/
-    # image_url: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1280px-Amazon_Web_Services_Logo.svg.png
+  - name: OMV
+    web_url: https://www.openmediavault.org/
+    image_url: https://avatars.githubusercontent.com/u/1897994?s=280&v=4
