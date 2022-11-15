@@ -297,7 +297,6 @@ h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -332,7 +331,7 @@ h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-  color: #45505b;
+  color: #9eaab4;
   line-height: 1;
   margin-right: 20px;
   transition: 0.3s;
@@ -406,6 +405,13 @@ section {
 
 .section-title p {
   margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Main
+--------------------------------------------------------------*/
+#about .content {
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -486,7 +492,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
