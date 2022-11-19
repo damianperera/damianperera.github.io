@@ -293,6 +293,10 @@ h6 {
   #hero {
     padding-left: 160px;
   }
+
+  #hero #details {
+    margin-top: 6%;
+  }
 }
 
 #hero:before {
@@ -342,6 +346,14 @@ h6 {
 }
 
 @media (max-width: 992px) {
+  #hero #details {
+    margin-top: 1%;
+  }
+
+  img {
+    margin-left: 70%;
+  }
+
   #hero {
     text-align: center;
   }
