@@ -1246,3 +1246,25 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+/*
+ # Medium Overrides
+*/
+.post-title h2 {
+  padding-top: 10px !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #0563bb !important;
+}
+
+.author {
+  display: none !important;
+}
+
+.read-more .btn {
+  display: none !important;
+}
+
+.VueCarousel {
+  padding: 0 !important;
+}
