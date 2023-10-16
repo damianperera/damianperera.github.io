@@ -16,7 +16,7 @@
   <title>Damian Perera</title>
   <meta content="Hey there, I'm Damian! Welcome to my personal website." name="description">
   <meta
-    content="damian, perera, damian perera, personal website, developer, software engineer, software developer, backend engineer, full-stack engineer, full stack engineer, lead engineer, spring, java, kotlin, demaperera"
+    content="damian, perera, damian perera, personal website, developer, software engineer, software developer, backend engineer, full-stack engineer, full stack engineer, lead engineer, spring, java, kotlin, demaperera, senior software engineer, senior engineer, damianperera"
     name="keywords">
 
   <link href="assets/img/logo.png" rel="icon">
@@ -65,12 +65,13 @@
           <!-- <p>I am <span class="typed" data-typed-items="a Software Engineer,a DIY Enthusiast,a Hobbyist Photographer"></span></p> -->
           <p style="color: grey; font-size: 20px;">Software Engineer</p>
           <div class="social-links">
-            <a href="https://lk.linkedin.com/in/damianperera" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/damianperera" class="google-plus"><i class="bx bxl-github"></i></a>
-            <a href="https://damianperera.medium.com" class="facebook"><i class="bx bxl-medium"></i></a>
-            <a href="https://twitter.com/damianperera" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="https://instagram.com/demaperera" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="https://www.flickr.com/photos/damianperera" class="facebook"><i class="bx bxl-flickr"></i></a>
+            <a href="https://lk.linkedin.com/in/damianperera" class="linkedin" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+            <a href="https://github.com/damianperera" class="google-plus" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="GitHub"><i class="bx bxl-github"></i></a>
+            <a href="https://damianperera.medium.com" class="medium" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Medium"><i class="bx bxl-medium"></i></a>
+            <a href="https://bsky.app/profile/damian.perera.io" class="cloud" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Bluesky"><i class="bx bxs-cloud"></i></a>
+            <a href="https://twitter.com/damianperera" class="twitter" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Twitter"><i class="bx bxl-twitter"></i></a>
+            <a href="https://instagram.com/demaperera" class="instagram" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Instagram"><i class="bx bxl-instagram"></i></a>
+            <a href="https://www.flickr.com/photos/damianperera" class="flickr" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Flickr"><i class="bx bxl-flickr"></i></a>
           </div>
         </div>
       </div>
@@ -921,6 +922,12 @@
 
   <!-- Medium Articles -->
   <!-- <script src="https://www.twilik.com/assets/retainable/rss-embed/retainable-rss-embed.js"></script> -->
+
+  <!-- Initialize Bootstrap Tooltips -->
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  </script>
 </body>
 
 </html>
