@@ -32,6 +32,25 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.hide {
+  display: none !important;
+}
+
+.in-resume-mode h2, .in-resume-mode h4 {
+  text-transform: none !important;
+}
+
+.in-resume-mode {
+  margin-left: -100px !important;
+}
+
+@media print {
+  @page {
+      size: A2;
+      margin: 0mm;
+  }
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

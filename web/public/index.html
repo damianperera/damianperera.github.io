@@ -39,7 +39,7 @@
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center">
+  <header id="header" class="d-flex flex-column justify-content-center hide-in-resume">
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
@@ -53,7 +53,7 @@
     </nav><!-- .nav-menu -->
   </header><!-- End Header -->
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
+  <section id="hero" class="d-flex flex-column justify-content-center hide-in-resume">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <div class="row">
         <div class="col-6 col-md-4">
@@ -222,14 +222,14 @@
     </section> -->
     <!-- End Skills Section -->
     <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
+    <section id="resume" class="resume transform-in-resume">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2>Resume</h2>
-          <!-- <h2>Damian Perera</h2> -->
+          <h2 class="hide-in-resume">Resume</h2>
+          <h2 class="hide-in-portfolio">Damian Perera</h2>
           <div style="text-align: justify;text-justify: inter-word;">
             <p style="margin-bottom: 1%;">
-              Hello! As a Senior Software Engineer at Personio, I leverage 
+              <span class="hide-in-resume">Hello! </span>As a Senior Software Engineer at Personio, I leverage 
               my&nbsp;<script>document.write(new Date().getFullYear() - 2016);</script>+ years 
               of experience in designing and developing scalable, performance-oriented cloud applications and 
               infrastructure to solve complex business problems. I have a strong passion for learning new 
@@ -241,7 +241,7 @@
           <div class="col-lg-7">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
-              <h4><a href="https://personio.com">Personio</a></h4>
+              <h4><a href="https://personio.com" target="_blank">Personio</a></h4>
               <h5>2021 - Present</h5>
               <h6><strong>Senior Software Engineer (L5)</strong></h6>
               <p><em>Kotlin · Spring · PHP · Laravel · MariaDB · pgSQL · gRPC · Kafka · AWS CDK · k8s</em></p>
@@ -260,7 +260,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4><a href="https://syscolabs.lk">Sysco LABS</a></h4>
+              <h4><a href="https://syscolabs.lk" target="_blank">Sysco LABS</a></h4>
               <h5>2018 - 2021</h5>
               <h6><strong>Associate Lead Engineer</strong></h6>
               <p><em>Java · Spring · REST · pgSQL · AWS</em></p>
@@ -291,7 +291,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4><a href="https://cloudcone.com">CloudCone</a></h4>
+              <h4><a href="https://cloudcone.com" target="_blank">CloudCone</a></h4>
               <h5>2017 - 2018</h5>
               <h6><strong>Software Engineer</strong></h6>
               <p><em>PHP · React · Express · REST</em></p>
@@ -303,7 +303,7 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4><a href="https://zone24x7.com">Zone24x7</a></h4>
+              <h4><a href="https://zone24x7.com" target="_blank">Zone24x7</a></h4>
               <h5>2016 - 2017</h5>
               <h6><strong>Trainee Associate Software Engineer</strong></h6>
               <p><em>Swift · JavaScript · Unity · C# · C++ · REST · Node.js · Angular · MariaDB</em></p>
@@ -330,23 +330,22 @@
                 <li>Amazon Web Services</li>
               </ul>
             </div>
-            <h3 class="resume-title">About</h3>
-            <div class="resume-item pb-0">
+            <h3 class="resume-title hide-in-portfolio">About</h3>
+            <div class="resume-item pb-0 hide-in-portfolio">
               <h4>LinkedIn</h4>
-              <p>linkedin.com/in/damianperera</p>
-              <!-- <h4>Website</h4>
-              <p>damian.perera.io</p> -->
+              <p><a href="https://de.linkedin.com/in/damianperera" target="_blank">linkedin.com/in/damianperera</a></p>
+              <h4>Website</h4>
+              <p><a href="https://damian.perera.io" target="_blank">damian.perera.io</a></p>
               <h4>Email</h4>
-              <p><i>ON REQUEST</i></p>
+              <p>ON REQUEST</p>
               <h4>Mobile</h4>
-              <p><i>ON REQUEST</i></p>
+              <p>ON REQUEST</p>
               <h4>Address</h4>
-              <p><i>ON REQUEST</i></p>
+              <p>ON REQUEST</p>
               <h4>Location</h4>
-              <p><i>ON REQUEST</i></p>
-              <h4>Work Authorisation Status</h4>
-              <p>
-              <h5>2021 - Present</h5>EU Blue Card</p>
+              <p>Munich, Germany</p>
+              <h4>ON REQUEST</h4>
+              <h5>2021 - Present</h5>ON REQUEST</p>
             </div>
             <h3 class="resume-title">Education</h3>
             <div class="resume-item pb-0">
@@ -622,7 +621,7 @@
     <!-- End Services Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <section id="testimonials" class="testimonials section-bg hide-in-resume">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -917,7 +916,7 @@
   <!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center hide-in-resume"><i class="bi bi-arrow-up-short"
       style="color: white"></i></a>
 
   <!-- Vendor JS Files -->
@@ -942,6 +941,31 @@
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   </script>
-</body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var isResume = urlParams.get('resume');
 
+        var elementsToHideInResume = document.querySelectorAll('.hide-in-resume');
+        var elementsToHideInPortfolio = document.querySelectorAll('.hide-in-portfolio');
+        var elementsToTransformInResume = document.querySelectorAll('.transform-in-resume');
+
+        if (isResume === 'true') {
+          elementsToHideInResume.forEach(function(element) {
+              element.classList.add('hide');
+          });
+          elementsToTransformInResume.forEach(function(element) {
+              element.classList.add('in-resume-mode');
+          });
+        } else {
+          elementsToHideInPortfolio.forEach(function(element) {
+              element.classList.add('hide');
+          });
+          elementsToTransformInResume.forEach(function(element) {
+              element.classList.remove('in-resume-mode');
+          });
+        }
+    });
+</script>
+</body>
 </html>
