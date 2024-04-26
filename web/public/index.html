@@ -2,29 +2,71 @@
 <html lang="en">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRPB7L6P7F"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-BRPB7L6P7F');
-  </script>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <!--
+    Basic Web Browser Tags
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Damian Perera</title>
-  <meta content="Hey there, I'm Damian! Welcome to my personal website." name="description">
+  <meta name="description" content="Hey there, I'm Damian! Welcome to my personal website." />
   <meta
     content="damian, perera, damian perera, personal website, developer, software engineer, software developer, backend engineer, full-stack engineer, full stack engineer, lead engineer, spring, java, kotlin, demaperera, senior software engineer, senior engineer, damianperera"
     name="keywords">
 
-  <link href="assets/img/logo.png" rel="icon">
-  <link href="assets/img/logo.png" rel="apple-touch-icon">
+  <!--
+    Favicons
+  -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
+
+  <!--
+    OpenGraph Tags (https://ogp.me/)
+  -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Damian Perera" />
+  <meta property="og:title" content="Damian Perera" />
+  <meta property="og:description" content="Hey there, I'm Damian! Welcome to my personal website." />
+  <meta property="og:url" content="https://damian.perera.io" />
+  <meta property="og:image" content="https://damian.perera.io/assets/img/testimonials/damian.jpeg" />
+  <meta property="og:image:width" content="1000" />
+  <meta property="og:image:height" content="1000" />
+
+  <!--
+    Twitter Tags (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary)
+  -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:description" content="Hey there, I'm Damian! Welcome to my personal website." />
+  <meta name="twitter:title" content="Damian Perera" />
+  <meta name="twitter:image" content="https://damian.perera.io/assets/img/testimonials/damian.jpeg" />
+  <meta name="twitter:creator" content="@DamianPerera">
+
+  <!--
+    Google Tags
+  -->
+  <meta itemprop="name" content="Damian Perera">
+  <meta itemprop="description" content="Hey there, I'm Damian! Welcome to my personal website.">
+  <meta itemprop="image" content="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
+
+  <!--
+    Google Structured Data (https://developers.google.com/search/docs/appearance/structured-data/software-app)
+  -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Damian Perera",
+      "operatingSystem": ["LINUX", "WINDOWS", "OSX"],
+      "applicationCategory": "BrowserApplication",
+      "countriesSupported": "DE",
+      "screenshot": "https://damian.perera.io/assets/img/testimonials/damian.jpeg"
+    }
+  </script>
+
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
-
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -225,14 +267,15 @@
     <section id="resume" class="resume transform-in-resume">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2 class="hide-in-resume">Resume</h2>
+          <h2 class="hide-in-resume">About Me</h2>
           <h2 class="hide-in-portfolio">Damian Perera</h2>
           <div style="text-align: justify;text-justify: inter-word;">
             <p style="margin-bottom: 1%;">
-              <span class="hide-in-resume">Hello! </span>As a Senior Software Engineer at Personio, I leverage 
-              my&nbsp;<script>document.write(new Date().getFullYear() - 2016);</script>+ years 
-              of experience in designing and developing scalable, performance-oriented cloud applications and 
-              infrastructure to solve complex business problems. I have a strong passion for learning new 
+              <span class="hide-in-resume">Hello! </span>As a Senior Software Engineer at Personio, I leverage
+              my&nbsp;
+              <script>document.write(new Date().getFullYear() - 2016);</script>+ years
+              of experience in designing and developing scalable, performance-oriented cloud applications and
+              infrastructure to solve complex business problems. I have a strong passion for learning new
               technologies and engineering environments, and I believe in continuous improvement and failing fast.
             </p>
           </div>
@@ -916,8 +959,8 @@
   <!-- End Footer -->
 
   <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center hide-in-resume"><i class="bi bi-arrow-up-short"
-      style="color: white"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center hide-in-resume"><i
+      class="bi bi-arrow-up-short" style="color: white"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -942,30 +985,39 @@
     const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var urlParams = new URLSearchParams(window.location.search);
-        var isResume = urlParams.get('resume');
+    document.addEventListener("DOMContentLoaded", function () {
+      var urlParams = new URLSearchParams(window.location.search);
+      var isResume = urlParams.get('resume');
 
-        var elementsToHideInResume = document.querySelectorAll('.hide-in-resume');
-        var elementsToHideInPortfolio = document.querySelectorAll('.hide-in-portfolio');
-        var elementsToTransformInResume = document.querySelectorAll('.transform-in-resume');
+      var elementsToHideInResume = document.querySelectorAll('.hide-in-resume');
+      var elementsToHideInPortfolio = document.querySelectorAll('.hide-in-portfolio');
+      var elementsToTransformInResume = document.querySelectorAll('.transform-in-resume');
 
-        if (isResume === 'true') {
-          elementsToHideInResume.forEach(function(element) {
-              element.classList.add('hide');
-          });
-          elementsToTransformInResume.forEach(function(element) {
-              element.classList.add('in-resume-mode');
-          });
-        } else {
-          elementsToHideInPortfolio.forEach(function(element) {
-              element.classList.add('hide');
-          });
-          elementsToTransformInResume.forEach(function(element) {
-              element.classList.remove('in-resume-mode');
-          });
-        }
+      if (isResume === 'true') {
+        elementsToHideInResume.forEach(function (element) {
+          element.classList.add('hide');
+        });
+        elementsToTransformInResume.forEach(function (element) {
+          element.classList.add('in-resume-mode');
+        });
+      } else {
+        elementsToHideInPortfolio.forEach(function (element) {
+          element.classList.add('hide');
+        });
+        elementsToTransformInResume.forEach(function (element) {
+          element.classList.remove('in-resume-mode');
+        });
+      }
     });
-</script>
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRPB7L6P7F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-BRPB7L6P7F');
+  </script>
 </body>
+
 </html>
