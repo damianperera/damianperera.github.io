@@ -40,9 +40,9 @@ h6 {
   text-transform: none !important;
 }
 
-.in-resume-mode {
+/* .in-resume-mode {
   margin-left: -100px !important;
-}
+} */
 
 @media print {
   @page {
@@ -168,6 +168,9 @@ h6 {
 @media (min-width: 991px) {
   #main {
     margin-left: 100px;
+  }
+  .in-resume-mode {
+    margin-left: -100px !important;
   }
 }
 
