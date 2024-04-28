@@ -238,6 +238,13 @@ h6 {
   }
 }
 
+@media (max-width: 992px) {
+  .nav-menu a span,
+  .nav-menu a:focus span {
+    color: #fff;
+  }
+}
+
 .nav-menu a:hover,
 .nav-menu .active,
 .nav-menu .active:focus,
