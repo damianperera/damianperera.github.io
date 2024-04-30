@@ -942,6 +942,10 @@ section {
   box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
 }
 
+.services .icon-box:hover a {
+  color: #067ded;
+}
+
 .services .iconbox-blue i {
   color: #47aeff;
 }
