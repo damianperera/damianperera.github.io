@@ -875,6 +875,14 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+
+@media (max-width: 991px) {
+  .services .icon-box {
+    width: 80%;
+    margin: auto;
+  }
+}
+
 .services .icon-box {
   text-align: center;
   padding: 70px 20px 80px 20px;
