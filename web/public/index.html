@@ -1,516 +1,1414 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!--
-    Basic Web Browser Tags
-  -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Damian Perera</title>
-  <meta name="description"
-    content="Meet Damian, a seasoned Software Engineer based in Germany. Dive in to explore his professional journey in the tech industry." />
+  <meta name="theme-color" content="#0b1020" />
+
+  <title>Damian Perera | Senior Backend Engineer</title>
   <meta
-    content="damian, perera, damian perera, personal website, developer, software engineer, software developer, backend engineer, full-stack engineer, full stack engineer, lead engineer, demaperera, senior software engineer, senior engineer, damianperera"
-    name="keywords">
+    name="description"
+    content="Damian Perera is a Senior Backend Engineer in Germany building scalable backend systems, cloud platforms, APIs, and product-focused software."
+  />
+  <meta
+    name="keywords"
+    content="Damian Perera, Senior Backend Engineer, Software Engineer Germany, Kotlin, Spring, PHP, backend engineer, cloud infrastructure, distributed systems, APIs, platform engineering, iOS app, CarPlay"
+  />
+  <meta name="author" content="Damian Perera" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://damian.perera.io/" />
 
-  <!--
-    Favicons
-  -->
-  <link rel="apple-touch-icon" sizes="180x180" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
-  <link rel="icon" type="image/png" sizes="32x32" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
-
-  <!--
-    OpenGraph Tags (https://ogp.me/)
-  -->
-  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Damian Perera" />
-  <meta property="og:title" content="Damian Perera" />
-  <meta property="og:description"
-    content="Meet Damian, a seasoned Software Engineer based in Germany. Dive in to explore his professional journey in the tech industry." />
-  <meta property="og:url" content="https://damian.perera.io" />
+  <meta property="og:title" content="Damian Perera | Senior Backend Engineer" />
+  <meta
+    property="og:description"
+    content="Senior Backend Engineer in Germany building scalable backend systems, cloud platforms, APIs, and product-focused software."
+  />
+  <meta property="og:url" content="https://damian.perera.io/" />
   <meta property="og:image" content="https://damian.perera.io/assets/img/social-banner.jpg" />
   <meta property="og:image:width" content="1000" />
   <meta property="og:image:height" content="1000" />
+  <meta property="og:locale" content="en_US" />
 
-  <!--
-    Twitter Tags (https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary)
-  -->
-  <!--
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:description"
-    content="Meet Damian, a seasoned Software Engineer based in Germany. Dive in to explore his professional journey in the tech industry." />
-  <meta name="twitter:title" content="Damian Perera" />
+  <meta name="twitter:title" content="Damian Perera | Senior Backend Engineer" />
+  <meta
+    name="twitter:description"
+    content="Senior Backend Engineer in Germany with 10+ years of experience across backend systems, cloud platforms, APIs, and product engineering."
+  />
   <meta name="twitter:image" content="https://damian.perera.io/assets/img/social-banner.jpg" />
-  <meta name="twitter:creator" content="@DamianPerera">
-  -->
-  <!--
-    Google Tags
-  -->
-  <meta itemprop="name" content="Damian Perera">
-  <meta itemprop="description"
-    content="Meet Damian, a seasoned Software Engineer based in Germany. Dive in to explore his professional journey in the tech industry.">
-  <meta itemprop="image" content="https://damian.perera.io/assets/img/testimonials/damian.jpeg">
 
-  <!--
-    Google Structured Data (https://developers.google.com/search/docs/appearance/structured-data/software-app)
-  -->
+  <link rel="icon" type="image/png" href="assets/img/testimonials/damian.jpeg" />
+  <link rel="apple-touch-icon" href="assets/img/testimonials/damian.jpeg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "dateCreated": "2016-01-01T12:34:00-05:00",
-      "dateModified": "2024-04-28T14:53:00-05:00",
-      "mainEntity": {
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
         "@type": "Person",
+        "@id": "https://damian.perera.io/#person",
         "name": "Damian Perera",
-        "alternateName": "demaperera",
-        "interactionStatistic": [{
-          "@type": "InteractionCounter",
-          "interactionType": "https://schema.org/FollowAction",
-          "userInteractionCount": 4761
-        }],
-        "description": "Meet Damian, a seasoned Software Engineer based in Germany. Dive in to explore his professional journey in the tech industry.",
-        "image": [
-          "https://damian.perera.io/assets/img/testimonials/damian.jpeg"
-        ],
+        "url": "https://damian.perera.io/",
+        "image": "https://damian.perera.io/assets/img/testimonials/damian.jpeg",
+        "jobTitle": "Senior Backend Engineer",
+        "description": "Senior Backend Engineer in Germany focused on scalable backend systems, cloud infrastructure, APIs, and product-focused engineering.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "DE"
+        },
         "sameAs": [
-          "https://damian.perera.io/resume",
-          "https://perera.io",
-          "https://linkedin.com/in/damianperera",
           "https://www.linkedin.com/in/damianperera",
-          "https://lk.linkedin.com/in/damianperera",
-          "https://de.linkedin.com/in/damianperera",
-          "https://facebook.com/navindudamian",
-          "https://fb.me/navindudamian",
           "https://github.com/damianperera",
-          "https://damianperera.medium.com",
-          "https://instagram.com/demaperera",
-          "https://bsky.app/profile/damian.perera.io"
+          "https://damian.perera.io/resume",
+          "https://damianperera.medium.com"
+        ],
+        "knowsAbout": [
+          "Kotlin",
+          "Spring",
+          "PHP",
+          "Backend Engineering",
+          "Cloud Infrastructure",
+          "Distributed Systems",
+          "API Design",
+          "Platform Engineering",
+          "iOS Product Development"
         ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://damian.perera.io/#website",
+        "url": "https://damian.perera.io/",
+        "name": "Damian Perera",
+        "description": "Personal portfolio and landing page for Damian Perera, Senior Backend Engineer.",
+        "publisher": {
+          "@id": "https://damian.perera.io/#person"
+        }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://damian.perera.io/#profile",
+        "url": "https://damian.perera.io/",
+        "name": "Damian Perera | Senior Backend Engineer",
+        "mainEntity": {
+          "@id": "https://damian.perera.io/#person"
+        },
+        "isPartOf": {
+          "@id": "https://damian.perera.io/#website"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-soft: #0d1220;
+      --panel: rgba(16, 22, 38, 0.78);
+      --panel-strong: rgba(18, 25, 44, 0.94);
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.14);
+      --text: #eef2ff;
+      --muted: #9aa7bd;
+      --muted-strong: #c6d0e1;
+      --accent: #7c9cff;
+      --accent-2: #67e8f9;
+      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1180px;
+      --nav-h: 64px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(124, 156, 255, 0.16), transparent 0 28%),
+        radial-gradient(circle at 85% 12%, rgba(103, 232, 249, 0.12), transparent 0 22%),
+        radial-gradient(circle at 50% 100%, rgba(124, 156, 255, 0.08), transparent 0 30%),
+        linear-gradient(180deg, #060911 0%, #090e18 45%, #070b14 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 38px 38px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0));
+      z-index: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: 72px 0;
+      position: relative;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-2);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: -999px;
+    }
+
+    .skip-link:focus {
+      left: 12px;
+      top: 12px;
+      z-index: 2000;
+      background: #fff;
+      color: #000;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 11, 20, 0.74);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-shell {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      flex-shrink: 0;
+    }
+
+    .brand-copy span {
+      display: block;
+      line-height: 1.2;
+    }
+
+    .brand-copy .role {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted-strong);
+      padding: 9px 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: #5c35d1;
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 14px 30px rgba(124, 156, 255, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .nav-cta:hover,
+    .button-primary:hover,
+    .button-secondary:hover,
+    .social-link:hover,
+    .text-link:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      padding: 18px 0 18px;
+      min-height: calc(100vh - var(--nav-h) - 8px);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-copy,
+    .hero-visual {
+      background: linear-gradient(180deg, rgba(19, 26, 44, 0.78), rgba(12, 17, 30, 0.72));
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 40px;
+    }
+
+    .hero-copy::after,
+    .hero-visual::after,
+    .panel::after,
+    .project-card::after,
+    .timeline-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(124, 156, 255, 0.08), transparent 40%, transparent 60%, rgba(103, 232, 249, 0.05));
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 4vw;
+      line-height: 0.96;
+      margin-bottom: 18px;
+      max-width: 11ch;
+    }
+
+    .hero-lead {
+      font-size: 18px;
+      max-width: 60ch;
+      margin-bottom: 22px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: rgba(255, 255, 255, 0.03);
+      color: #d8e0ef;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .button-primary,
+    .button-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .button-primary {
+      background: #5c35d1;
+      color: white;
+      box-shadow: 0 14px 32px rgba(124, 156, 255, 0.24);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--line-strong);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      transition: 0.25s ease;
+      font-size: 18px;
+    }
+
+    .hero-visual {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 14px;
+      transform: translateY(0);
+      animation: floatY 7s ease-in-out infinite;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .mini-stat {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .mini-stat span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .panel {
+      position: relative;
+      background: linear-gradient(180deg, rgba(17, 23, 39, 0.8), rgba(12, 16, 28, 0.78));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      overflow: hidden;
+      backdrop-filter: blur(18px);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .feature:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .feature-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(124,156,255,0.12);
+      border: 1px solid rgba(124,156,255,0.18);
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .resume-facts {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .resume-facts .fact {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.05);
+      font-size: 14px;
+    }
+
+    .resume-facts .fact span:last-child {
+      color: var(--muted-strong);
+      text-align: right;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      position: relative;
+    }
+
+    .timeline-card {
+      position: relative;
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(18, 25, 43, 0.82), rgba(12, 17, 30, 0.8));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .timeline-card:hover,
+    .project-card:hover,
+    .trust-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(124,156,255,0.24);
+    }
+
+    .timeline-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .company-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      padding: 10px;
+      object-fit: contain;
+      background: rgba(255,255,255,0.97);
+      border: 1px solid rgba(255,255,255,0.12);
+      flex-shrink: 0;
+    }
+
+    .company-meta h3 {
+      font-size: 21px;
+      margin-bottom: 6px;
+    }
+
+    .company-meta p {
+      font-size: 14px;
+    }
+
+    .role-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #dce6ff;
+      background: rgba(124, 156, 255, 0.1);
+      border: 1px solid rgba(124, 156, 255, 0.16);
+    }
+
+    .timeline-card ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    .timeline-card li + li {
+      margin-top: 10px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      gap: 16px;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 100%;
+      background: linear-gradient(180deg, rgba(18, 25, 43, 0.82), rgba(12, 17, 30, 0.8));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 26px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .project-label {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+    }
+
+    .project-media {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 2px;
+    }
+
+    .app-icon-wrap,
+    .carplay-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.02));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .app-icon-wrap {
+      width: 92px;
+      height: 92px;
+      padding: 8px;
+      border-radius: 15px;
+    }
+
+    .app-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      display: block;
+    }
+
+    .carplay-badge-wrap {
+      width: min(100%, 200px);
+      min-height: 66px;
+      padding: 10px 12px;
+      border-radius: 15px;
+    }
+
+    .carplay-badge-wrap img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .device-shot {
+      margin-top: 4px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .device-shot::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 20px;
+    }
+
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-top: auto;
+      transition: transform 0.25s ease;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+    }
+
+    .trust-card {
+      background: linear-gradient(180deg, rgba(18, 25, 43, 0.82), rgba(12, 17, 30, 0.8));
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 26px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .linkedin-proof {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .linkedin-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(124,156,255,0.12);
+      border: 1px solid rgba(124,156,255,0.18);
+      color: var(--accent);
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
-    </script>
 
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .about-grid,
+      .trust-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 780px) {
+      :root {
+        --nav-h: 62px;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 24px));
+      }
+
+      .nav-shell {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero {
+        padding: 10px 0 12px;
+      }
+
+      .hero-copy,
+      .hero-visual,
+      .panel,
+      .project-card,
+      .timeline-card,
+      .trust-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      .hero h1 {
+        max-width: none;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .button-primary,
+      .button-secondary,
+      .nav-cta {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .mini-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <!-- ======= Mobile nav toggle button ======= -->
-  <i class="bi bi-list mobile-nav-toggle d-lg-none hide-in-resume"></i>
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex flex-column justify-content-center hide-in-resume">
-    <nav id="navbar" class="navbar nav-menu">
-      <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i>
-            <span>Home</span></a>
-        </li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-face"></i>
-            <span>About Me</span></a>
-        </li>
-        <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-star"></i>
-            <span>Recommendations</span></a></li>
-      </ul>
-    </nav><!-- .nav-menu -->
-  </header><!-- End Header -->
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center hide-in-resume">
-    <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <div class="row">
-        <div class="col-6 col-md-4">
-          <img style="width: 80%; margin-top: 0%; border-radius: 50%;" src="assets/img/testimonials/damian.jpeg"
-            class="testimonial-img" alt="Image of Damian Perera">
-        </div>
-        <div id="details" class="col-12 col-md-8">
-          <h1>Damian Perera</h1>
-          <p style="color: lightgrey; font-size: 20px; margin-left: 3px;">Software Engineer</p>
-          <div class="social-links">
-            <a href="/resume" class="flickr" data-bs-toggle="tooltip" data-bs-placement="bottom"
-              data-bs-title="Resume"><i class="bx bxs-file-pdf"></i></a>
-            <a href="https://www.linkedin.com/in/damianperera" class="linkedin" data-bs-toggle="tooltip"
-              data-bs-placement="bottom" data-bs-title="LinkedIn"><i class="bx bxl-linkedin"></i></a>
-            <a href="https://github.com/damianperera" class="google-plus" data-bs-toggle="tooltip"
-              data-bs-placement="bottom" data-bs-title="GitHub"><i class="bx bxl-github"></i></a>
-            <a href="https://damianperera.medium.com" class="medium" data-bs-toggle="tooltip" data-bs-placement="bottom"
-              data-bs-title="Medium"><i class="bx bxl-medium"></i></a>
-            <a href="https://instagram.com/demaperera" class="instagram" data-bs-toggle="tooltip"
-              data-bs-placement="bottom" data-bs-title="Instagram"><i class="bx bxl-instagram"></i></a>
-          </div>
-        </div>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" aria-label="Primary">
+    <div class="container nav-shell">
+      <a class="brand" href="#top" aria-label="Damian Perera home">
+        <span class="brand-mark">
+          <img src="assets/img/testimonials/damian.jpeg" alt="Damian Perera profile photo" />
+        </span>
+        <span class="brand-copy">
+          <span>Damian Perera</span>
+          <span class="role">Senior Backend Engineer</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#proof">Recommendations</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </section><!-- End Hero -->
+  </header>
+
   <main id="main">
-    <section id="about" class="services" style="padding-bottom: 10px !important;">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>About Me</h2>
-          <div style="text-align: justify;text-justify: inter-word;">
-            <p style="margin-bottom: 1%;">
-              Hey there! I'm a Software Engineer with over&nbsp;
-              <script>document.write(new Date().getFullYear() - 2016);</script>&nbsp;years
-              of experience, where I focus on crafting scalable cloud applications that tackle
-              complex business challenges. I love diving into new technologies and always aim to learn and grow quickly,
-              even if it means making mistakes along the way.
+    <section id="top" class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <aside class="hero-visual reveal" aria-label="Profile summary">
+            <div class="hero-photo-wrap">
+              <img
+                class="hero-photo"
+                src="assets/img/testimonials/damian.jpeg"
+                alt="Portrait of Damian Perera"
+              />
+            </div>
+
+            <div class="mini-stats">
+              <div class="mini-stat">
+                <strong>10+ Years</strong>
+                <span>Building software across backend, cloud, and product engineering.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>4</strong>
+                <span>Core companies across HR tech, cloud platforms, enterprise systems, and R&amp;D.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>End-to-end</strong>
+                <span>From architecture and APIs to operations, delivery, and developer workflows.</span>
+              </div>
+              <div class="mini-stat">
+                <strong>Side projects</strong>
+                <span>Product-driven work spanning mobile apps, backend services, and developer tooling.</span>
+              </div>
+            </div>
+          </aside>
+
+          <section class="hero-copy reveal" aria-labelledby="hero-title">
+            <p class="eyebrow">Germany · Backend · Platform · Product</p>
+            <h1 id="hero-title">Building reliable systems with product and platform depth.</h1>
+            <p class="hero-lead">
+              I design and evolve backend platforms, modernize complex systems, and ship product-focused
+              software across Kotlin, Spring, PHP, APIs, cloud infrastructure, and engineering operations.
             </p>
-            <p>
-              Outside of work, I'm all about contributing to open source projects, sharing knowledge through teaching
-              backend development, exploring new places, and experimenting in the kitchen. Let's connect and create
-              something awesome together!
-            </p>
-          </div>
-        </div>
-        <div class="section-sub-title">
-          <h4>Professional Experience</h4>
-        </div>
-        <!-- Personio -->
-        <div class="company row">
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <img style="z-index: 9999;" width="100" height="100" viewBox="0 0 600 600"
-                  src="assets/img/portfolio/personio.png" alt="Personio logo" loading="lazy"></img>
-              </div>
-              <h4><a href="https://personio.com" target="_blank">Personio</a></h4>
-              <h6>2021 - Present</h6>
-              <p>Personio is a German unicorn headquartered in Munich that develops software to simplify and automate HR
-                management processes for SMEs.</p>
+
+            <div class="hero-meta" aria-label="Key skills">
+              <span class="pill">Kotlin</span>
+              <span class="pill">Spring</span>
+              <span class="pill">PHP</span>
+              <span class="pill">Distributed Systems</span>
+              <span class="pill">Cloud Infrastructure</span>
+              <span class="pill">Platform Engineering</span>
             </div>
-          </div>
-          <!-- Sysco LABS -->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in"
-            data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <img style="z-index: 9999;" width="180" height="40" viewBox="0 0 600 600"
-                  src="assets/img/portfolio/sysco-labs.png" alt="Sysco LABS logo" loading="lazy"></img>
-              </div>
-              <h4><a href="https://syscolabs.lk" target="_blank">Sysco LABS</a></h4>
-              <h6>2018 - 2021</h6>
-              <p>Sysco LABS is the technology arm of Sysco Corporation (<a href="https://investors.sysco.com/"
-                  target="_blank">NYSE:SYY</a>), the worlds largest food service company leading the hospitality
-                industry.</p>
+
+            <div class="hero-actions">
+              <a class="button-primary" href="/resume">
+                <i class="bi bi-file-earmark-person"></i>
+                View Resume
+              </a>
+              <a class="button-secondary" href="#projects">
+                <i class="bi bi-grid-1x2"></i>
+                View Projects
+              </a>
             </div>
-          </div>
-          <!-- CloudCone -->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-            data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <img style="z-index: 9999;" width="100" height="100" viewBox="0 0 600 600"
-                  src="assets/img/portfolio/cloudcone.png" alt="CloudCone logo" loading="lazy"></img>
-              </div>
-              <h4><a href="https://cloudcone.com" target="_blank">CloudCone</a></h4>
-              <h6>2017 - 2018</h6>
-              <p>CloudCone is a robust cloud computing platform offering cloud and dedicated infrastructure for your
-                online presence, fully managed by friendly humans.</p>
-            </div>
-          </div>
-          <!-- Zone24x7 -->
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in"
-            data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <img style="z-index: 9999;" width="100" height="100" viewBox="0 0 600 600"
-                  src="assets/img/portfolio/zone24x7.png" alt="Zone24x7 logo" loading="lazy"></img>
-              </div>
-              <h4><a href="https://zone24x7.com" target="_blank">Zone24x7</a></h4>
-              <h6>2016 - 2017</h6>
-              <p>Zone24x7 is an advanced Technology and Research Centre that partners with a wide range of startups and
-                Fortune 500 companies.</p>
-            </div>
-          </div>
-          <!-- View Resume Button -->
-          <section style="padding-bottom: 0 !important;">
-            <div class="container" data-aos="fade-up">
-              <div class="section-title">
-                <button id="navigate-to-resume" style="text-align: center;">
-                  View my resume
-                </button>
-              </div>
+
+            <div class="social-links" aria-label="Professional links">
+              <a class="social-link" href="https://www.linkedin.com/in/damianperera" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a class="social-link" href="https://github.com/damianperera" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="bi bi-github"></i>
+              </a>
+              <a class="social-link" href="https://damianperera.medium.com" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+                <i class="bi bi-medium"></i>
+              </a>
             </div>
           </section>
         </div>
       </div>
     </section>
-    <!-- End Services Section -->
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg hide-in-resume">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Recommendations</h2>
-        </div>
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-            <!-- Gleidson Thuller -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/gleidson.jpeg" class="testimonial-img" alt="Image of Gleidson Thuller"
-                  loading="lazy">
-                <h3>Gleidson Thuller</h3>
-                <h4>Engineering Manager, Personio</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I had the pleasure to work with Damian for over a year at Personio. During this time Damian has proven
-                  to be a very reliable, friendly, team-oriented engineer, always showing a high degree of integrity and
-                  ownership. His technical skills not only helped the team but also me to understand the caveats and
-                  bottlenecks of our complex monolith-migration project and take proper decision right on time.
-                  <br /><br />It's important to mention that Damian not only shows great technical and social abilities
-                  but also has a fantastic product awareness, always being a reliable peer in our cross-functional team.
-                  Due to a massive department growth and an urging need for his skills in another team, we're currently
-                  not working together but I'm truly looking forward to have the chance to work with Damian again.
-                  <br /><br />Damian is a great addition to any team and I have no doubts I'll hear about uncountable
-                  success cases throughout his career as a software engineer.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
+
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <section class="panel reveal" aria-labelledby="about-title">
+            <div class="section-header">
+              <p class="eyebrow">About</p>
+              <h2 id="about-title">Backend engineering with product and platform depth.</h2>
+            </div>
+
+            <p>
+              I'm a software engineer with over
+              <script>document.write(new Date().getFullYear() - 2016);</script>
+              years of experience building scalable applications, backend services, and cloud-based systems.
+              My work spans architecture, modernization, delivery, reliability, and engineering operations.
+            </p>
+
+            <p style="margin-top: 16px;">
+              I focus on solving technically complex problems in ways that stay practical for teams, products,
+              and long-term platform health. I also build side projects, contribute to open source, and work
+              across mobile and backend systems when product value benefits from owning more of the stack.
+            </p>
+
+            <div class="feature-list" aria-label="Core strengths">
+              <div class="feature">
+                <div class="feature-icon"><i class="bi bi-diagram-3"></i></div>
+                <div>
+                  <h3>Architecture and modernization</h3>
+                  <p>Experienced in evolving legacy systems, reducing platform complexity, and improving engineering leverage.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon"><i class="bi bi-cloud"></i></div>
+                <div>
+                  <h3>Cloud and infrastructure</h3>
+                  <p>Comfortable across APIs, distributed services, operations, deployment workflows, and production reliability.</p>
+                </div>
+              </div>
+
+              <div class="feature">
+                <div class="feature-icon"><i class="bi bi-people"></i></div>
+                <div>
+                  <h3>Product and team impact</h3>
+                  <p>Strong at translating technical complexity into execution plans that work for engineering and product stakeholders.</p>
+                </div>
               </div>
             </div>
-            <!-- Katja Hähnlein -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/katja.jpeg" class="testimonial-img" alt="Image of Katja Hähnlein"
-                  loading="lazy">
-                <h3>Katja Hähnlein</h3>
-                <h4>Product Manager, Personio</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  I really appreciate working with Damian. He is a great colleague with a huge amount of expertise and
-                  truly is a team player: He delivers always great quality within his releases as he truly tries to
-                  understand the customer's problems as well the product requirements. He supports the onboarding of new
-                  colleagues, and with his good mood and openness, he increases the team's happiness.
-                  Mostly I am impressed with Damian's architectural and planning abilities. He supported me
-                  significantly with a complex roadmap planning of a technical re-architecture of our domain and made
-                  sure that all technical aspects and potential risks are considered before and during this complex
-                  architectural initiative.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
+          </section>
+
+          <aside class="panel reveal" aria-labelledby="facts-title">
+            <div class="section-header">
+              <p class="eyebrow">Snapshot</p>
+              <h2 id="facts-title">At a glance.</h2>
             </div>
-            <!-- Shanik Makalande -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/shanik.jpeg" class="testimonial-img" alt="Image of Shanik Makalande"
-                  loading="lazy">
-                <h3>Shanik Makalande</h3>
-                <h4>Software Architect, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Damian is a rare all-rounder in terms of practical full-stack knowledge, sound architectural foresight
-                  and good people management skills. He has demonstrated calm effectiveness in the face of many highly
-                  stressful situations.
-                  <br /><br />While Damian was in my team I could rest easy knowing that he would be at the forefront of
-                  any issue that would come up, generally with a solution in place before it even gets to me. Aside from
-                  his on-point work ethic, he is also a pleasure to work with. Damian is often the life of the party and
-                  he demonstrates a passion for drawing the team together and motivating them.
-                  <br /><br />I highly recommend Damian to any team that has a good vision for the future, if he buys
-                  into it, he will help get you there!
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
+
+            <div class="resume-facts">
+              <div class="fact"><span>Primary focus</span><span>Senior Backend Engineering</span></div>
+              <div class="fact"><span>Location</span><span>Germany</span></div>
+              <div class="fact"><span>Core stack</span><span>Kotlin, Spring, PHP</span></div>
+              <div class="fact"><span>Secondary strengths</span><span>APIs, cloud infrastructure, platform work</span></div>
+              <div class="fact"><span>Product breadth</span><span>Backend platforms and iOS side projects</span></div>
+              <div class="fact"><span>Public profiles</span><span>LinkedIn, GitHub, Resume</span></div>
             </div>
-            <!-- Chandima Jayawickrema -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/chandima.jpeg" class="testimonial-img"
-                  alt="Image of Chandima Jayawickrema" loading="lazy">
-                <h3>Chandima Jayawickrema</h3>
-                <h4>Sr. Software Architect, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Damian is one of best Engineers I have worked with in my career.
-                  <br /><br />He is an all-rounder who excels in Full-stack Programming, DevOps, Business alignment,
-                  Communication and Leadership at such a young age. Not only does he hold a strong suite of
-                  competencies, but also he processes great inter-personal qualities with humility that makes him a
-                  great team player and a well-respected colleague among peers. Moreover, I cannot appreciate enough on
-                  Damian's pro-activeness, self-engaged passion and extreme accountability when it comes to sustaining
-                  our day-to-day operations.
-                  <br /><br />He is indeed a rare gem to find.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- Keet Sugathadasa -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/keet.jpeg" class="testimonial-img" alt="Image of Keet Sugathadasa"
-                  loading="lazy">
-                <h3>Keet Sugathadasa</h3>
-                <h4>Technical Lead, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Damian is one of the most exceptional characters I have met in my career. He takes pride in every
-                  aspect he's doing. He's quite an example for a true full-stack engineer, where he technically excels
-                  at every task he's given with. His knowledge on Javascript is top-notch where he has made a lot of
-                  contributions to our team as well as the open source community. What I like the most about him, is his
-                  curiosity to learn new technologies, evaluate them and quickly adapt into them. He's the kind of
-                  engineer who goes above and beyond his assigned responsibilities, to help his project and his team
-                  mates whenever needed.
-                  <br /><br /> He's also a great team player and a people's person with a solid personality, which
-                  indeed makes him adapt to any working environment he's put into. He possesses great leadership skills
-                  which will indeed be an inspiration to everyone working around him. He's a young and talented
-                  engineer, and he would definitely be an invaluable asset to any team.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- Hasitha Liyanage -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/hasithal.jpeg" class="testimonial-img" alt="Image of Hasitha Liyanage"
-                  loading="lazy">
-                <h3>Hasitha Liyanage</h3>
-                <h4>VP Engineering, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Damian worked with me in 2019 during my time as engineering lead for Sysco LABS' customer experience
-                  organization. He was one of the more exceptional software engineers in that team: technically solid,
-                  hardworking and possessing soft skills necessary for future leadership. One of the things he did was
-                  taking ownership of a relatively complicated architectural change that helped improve the
-                  application's front-end performance significantly.
-                  <br /><br />He'll be a great addition to any team.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- Roshan Wettesinghe -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/roshan.jpeg" class="testimonial-img" alt="Image of Roshan Wettesinghe"
-                  loading="lazy">
-                <h3>Roshan Wettesinghe</h3>
-                <h4>Lead Engineer, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  As a self-motivated and very innovative thinker, Damian has been a great asset to our company as an
-                  engineer.
-                  <br /><br />Damian was viewed very favorably by both his coworkers as well as management for his
-                  logical mind and his ability to quickly solve problems in very creative and efficient ways. He truly
-                  possesses the mind of an engineer, and is consistently looking ways to improve. His mastery of
-                  engineering concepts is truly impressive. He also proven himself capable in research and design.
-                  <br /><br />I'm truly honored to work with him and learned a lot from him.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- Shashika Gunasena -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/shashika.jpeg" class="testimonial-img"
-                  alt="Image of Shashika Gunasena" loading="lazy">
-                <h3>Shashika Gunasena</h3>
-                <h4>Lead Engineer, Sysco LABS</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Damian was the youngest in my team and a fine gentleman. He had the challenge to replace the skill set
-                  of a senior engineer. Undoubtedly he accomplished that challenge. That was his very first time working
-                  in front-end technology. Within a short period, he groomed himself as a well-experienced engineer. He
-                  posses strong skills in JavaScript, NodeJS, ReactJS and AWS. Also, he is skilled in Java.
-                  <br /><br />He is a strong communicator. He delivers concepts clearly to different levels of
-                  audiences. He blends well with teammates, which makes him a required person all the time. His
-                  well-organized work structure helps stakeholders to get a clear picture of how things getting done. He
-                  is a go-getter. His friendly behaviour is a great asset to the team.
-                  <br /><br />I highly recommend this wonderful young gentleman without a second thought.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-            <!-- Udara Samarasinghe -->
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/udara.jpeg" class="testimonial-img" alt="Image of Udara Samarasinghe"
-                  loading="lazy">
-                <h3>Udara Samarasinghe</h3>
-                <h4>Project Manager, Zone24x7</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  It's not often that you come across individuals with the right balance of skill, passion, and attitude
-                  as exhibited by Damian.
-                  <br /><br />I closely worked with Damian on the retail innovation project where he was entrusted with
-                  complex tasks that came with frequent changes and tight deadlines. I was particularly impressed by
-                  Damian's can-do attitude, teamwork, his passion for new technology and innovation, his ability to
-                  adapt to change, and his dedication that led to consistent timely delivery.
-                  <br /><br />Damian would be an asset to any team and comes with my recommendation.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
+          </aside>
         </div>
       </div>
-    </section><!-- End Testimonials Section -->
-  </main><!-- End #main -->
+    </section>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      &copy; 2016 -&nbsp;<script>document.write(new Date().getFullYear());</script>&nbsp;Damian Perera
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">Experience</p>
+          <h2>Professional experience</h2>
+          <p>
+            Selected roles across product, platform, and infrastructure work, with a focus on reliable systems,
+            thoughtful architecture, and long-term engineering quality.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-card reveal">
+            <div class="timeline-top">
+              <img src="assets/img/portfolio/personio.png" alt="Personio logo" class="company-logo" />
+              <div class="company-meta">
+                <h3>Personio</h3>
+                <p>2021 - Present · Germany</p>
+              </div>
+            </div>
+
+            <div class="role-line">
+              <span class="tag">Senior Software Engineer</span>
+              <span class="tag">Backend Systems</span>
+              <span class="tag">Platform Modernization</span>
+            </div>
+
+            <p>
+              Personio is a German HR software company focused on simplifying and automating people operations for SMEs.
+            </p>
+
+            <ul>
+              <li>Worked on complex backend and platform challenges in a high-growth product environment.</li>
+              <li>Contributed to modernization initiatives and large-scale architectural change.</li>
+              <li>Collaborated across engineering and product functions to improve delivery quality and system evolution.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-top">
+              <img src="assets/img/portfolio/sysco-labs.png" alt="Sysco LABS logo" class="company-logo" />
+              <div class="company-meta">
+                <h3>Sysco LABS</h3>
+                <p>2018 - 2021</p>
+              </div>
+            </div>
+
+            <div class="role-line">
+              <span class="tag">Software Engineer</span>
+              <span class="tag">Full-Stack Systems</span>
+              <span class="tag">Enterprise Scale</span>
+            </div>
+
+            <p>
+              Sysco LABS is the technology arm of Sysco Corporation, supporting large-scale systems in the food service and hospitality domain.
+            </p>
+
+            <ul>
+              <li>Delivered across full-stack and backend initiatives in a large enterprise technology context.</li>
+              <li>Worked through high-pressure technical problems with strong ownership and execution.</li>
+              <li>Built experience across architecture, performance, delivery, and stakeholder collaboration.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-top">
+              <img src="assets/img/portfolio/cloudcone.png" alt="CloudCone logo" class="company-logo" />
+              <div class="company-meta">
+                <h3>CloudCone</h3>
+                <p>2017 - 2018</p>
+              </div>
+            </div>
+
+            <div class="role-line">
+              <span class="tag">Cloud Platform</span>
+              <span class="tag">Infrastructure</span>
+              <span class="tag">Operations</span>
+            </div>
+
+            <p>
+              CloudCone is a cloud computing platform offering cloud and dedicated infrastructure services.
+            </p>
+
+            <ul>
+              <li>Worked close to infrastructure-oriented systems and operational concerns.</li>
+              <li>Built experience relevant to hosting platforms, service reliability, and developer-facing tooling.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-card reveal">
+            <div class="timeline-top">
+              <img src="assets/img/portfolio/zone24x7.png" alt="Zone24x7 logo" class="company-logo" />
+              <div class="company-meta">
+                <h3>Zone24x7</h3>
+                <p>2016 - 2017</p>
+              </div>
+            </div>
+
+            <div class="role-line">
+              <span class="tag">Software Engineer</span>
+              <span class="tag">R&amp;D</span>
+              <span class="tag">Client Systems</span>
+            </div>
+
+            <p>
+              Zone24x7 is a technology and research company partnering with startups and large enterprises.
+            </p>
+
+            <ul>
+              <li>Built an early foundation across product engineering, solution delivery, and fast-changing technical environments.</li>
+              <li>Worked with varied business problems and engineering constraints across client-facing work.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="eyebrow">Projects</p>
+          <h2>Things I build beyond the day job</h2>
+          <p>
+            A selection of product and engineering work spanning mobile apps, backend systems, infrastructure,
+            and developer-focused tooling.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <p class="project-label">Featured iOS App</p>
+            <h3>Tank Radar</h3>
+            <p>
+              A product-focused iOS app designed to help drivers find the best fuel prices, view price insights, maintain refueling history
+              and support a smoother in-car experience through Apple CarPlay.
+            </p>
+
+            <div class="project-media" aria-label="App assets placeholders">
+              <div class="app-icon-wrap">
+                <img
+                  src="https://tankradar.perera.io/images/icon.png"
+                  alt="Tank Radar app icon"
+                />
+              </div>
+
+              <div class="carplay-badge-wrap">
+                <img
+                  src="/assets/img/carplay.png"
+                  alt="Placeholder Works with Apple CarPlay badge"
+                />
+              </div>
+            </div>
+            <a class="text-link" href="https://tankradar.perera.io" target="_blank" rel="noopener noreferrer">
+              View App <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <p class="project-label">GitHub Repository</p>
+            <h3>Repository One</h3>
+            <p>
+              Placeholder for a backend, infrastructure, or developer platform repository that demonstrates architecture,
+              maintainability, and technical depth in production-style engineering.
+            </p>
+
+            <div class="project-stack">
+              <span class="tag">Kotlin</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Docker</span>
+            </div>
+
+            <a class="text-link" href="https://github.com/damianperera" target="_blank" rel="noopener noreferrer">
+              View on GitHub <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <p class="project-label">GitHub Repository</p>
+            <h3>Repository Two</h3>
+            <p>
+              Placeholder for an API, tooling, automation, or systems repository that highlights ownership,
+              implementation quality, and clean technical problem solving.
+            </p>
+
+            <div class="project-stack">
+              <span class="tag">PHP</span>
+              <span class="tag">APIs</span>
+              <span class="tag">Infrastructure</span>
+            </div>
+
+            <a class="text-link" href="https://github.com/damianperera" target="_blank" rel="noopener noreferrer">
+              View on GitHub <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="section">
+      <div class="container">
+        <div class="trust-grid">
+          <section class="trust-card reveal" aria-labelledby="recommendations-title">
+            <div class="section-header" style="margin-bottom: 18px;">
+              <p class="eyebrow">Recommendations</p>
+              <h2 id="recommendations-title">Kind words live on LinkedIn</h2>
+            </div>
+
+            <p>
+              A fuller set of written recommendations from managers, architects, product partners, and former colleagues
+              is available on my LinkedIn profile. They reflect the way I work across engineering depth, ownership,
+              collaboration, and long-term platform thinking.
+            </p>
+
+            <div class="linkedin-proof">
+              <div class="linkedin-icon"><i class="bi bi-linkedin"></i></div>
+              <div>
+                <div style="font-weight: 700; color: var(--text); margin-bottom: 4px;">LinkedIn recommendations</div>
+                <div class="muted" style="font-size: 14px;">Publicly available alongside experience and profile details.</div>
+              </div>
+            </div>
+
+            <a
+              class="text-link"
+              href="https://www.linkedin.com/in/damianperera"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="margin-top: 20px;"
+            >
+              Open LinkedIn profile <i class="bi bi-arrow-up-right"></i>
+            </a>
+          </section>
+
+          <aside class="trust-card reveal" id="contact" aria-labelledby="contact-title">
+            <div class="section-header" style="margin-bottom: 18px;">
+              <p class="eyebrow">Contact</p>
+              <h2 id="contact-title">Get in touch</h2>
+            </div>
+
+            <p>
+              The easiest way to reach me or explore more of my work is through LinkedIn, GitHub, Medium, or my resume.
+              This page is meant to be a clear starting point for the work, experience, and projects I care about most.
+            </p>
+
+            <div class="hero-actions" style="margin-top: 24px; margin-bottom: 0;">
+              <a class="button-primary" href="/resume">
+                <i class="bi bi-file-earmark-person"></i>
+                Open Resume
+              </a>
+              <a
+                class="button-secondary"
+                href="https://www.linkedin.com/in/damianperera"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="bi bi-linkedin"></i>
+                LinkedIn
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>Damian Perera · Senior Backend Engineer · Germany</div>
+      <div><a href="/impressum">Legal Notice <i class="bi bi-arrow-up-right"></i></a></div>
     </div>
   </footer>
-  <!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"
-      style="color: white"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <!-- Initialize Bootstrap Tooltips -->
   <script>
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-  </script>
+    (function () {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
 
-  <!-- Custom Scripts -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const elementsToHideInPortfolio = document.querySelectorAll('.hide-in-portfolio');
-      const elementsToTransformInResume = document.querySelectorAll('.transform-in-resume');
-
-      elementsToHideInPortfolio.forEach(function (element) {
-        element.classList.add('hide');
-      });
-      elementsToTransformInResume.forEach(function (element) {
-        element.classList.remove('in-resume-mode');
-      });
-    });
-
-    const button = document.getElementById('navigate-to-resume');
-    button.onclick = function () {
-      location.assign('/resume');
-    }
-  </script>
-
-  <!-- Google Tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BRPB7L6P7F"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-BRPB7L6P7F');
+      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    })();
   </script>
 </body>
-
 </html>
