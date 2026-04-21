@@ -12,7 +12,7 @@
   />
   <meta
     name="keywords"
-    content="Damian Perera, Software Engineer, Software Engineer Germany, Kotlin, Spring, PHP, backend engineer, cloud infrastructure, distributed systems, APIs, platform engineering, iOS app, CarPlay"
+    content="Damian Perera, Software Engineer, Software Engineer Germany, Kotlin, Spring, PHP, backend engineer, cloud infrastructure, distributed systems, APIs, Product Engineering, iOS app, CarPlay"
   />
   <meta name="author" content="Damian Perera" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -39,8 +39,8 @@
   />
   <meta name="twitter:image" content="https://damian.perera.io/assets/img/social-banner.jpg" />
 
-  <link rel="icon" type="image/png" href="assets/img/testimonials/damian.jpeg" />
-  <link rel="apple-touch-icon" href="assets/img/testimonials/damian.jpeg" />
+  <link rel="icon" type="image/png" href="/assets/img/testimonials/damian.jpeg" />
+  <link rel="apple-touch-icon" href="/assets/img/testimonials/damian.jpeg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,7 +72,6 @@
         "sameAs": [
           "https://www.linkedin.com/in/damianperera",
           "https://github.com/damianperera",
-          "https://damian.perera.io/resume",
           "https://damianperera.medium.com"
         ],
         "knowsAbout": [
@@ -83,7 +82,7 @@
           "Cloud Infrastructure",
           "Distributed Systems",
           "API Design",
-          "Platform Engineering",
+          "Product Engineering",
           "iOS Product Development"
         ]
       },
@@ -348,6 +347,12 @@
       align-items: stretch;
     }
 
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
     .hero-copy,
     .hero-visual {
       background: linear-gradient(180deg, rgba(19, 26, 44, 0.78), rgba(12, 17, 30, 0.72));
@@ -409,6 +414,8 @@
     }
 
     .hero-actions {
+      margin-top: auto;
+      padding-top: 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
@@ -500,7 +507,7 @@
 
     .mini-stat strong {
       display: block;
-      font-size: 22px;
+      font-size: 20px;
       color: var(--text);
       margin-bottom: 6px;
     }
@@ -950,6 +957,99 @@
         padding: 58px 0;
       }
     }
+
+    .timeline {
+  display: grid;
+  gap: 16px;
+  position: relative;
+}
+
+.timeline-card {
+  position: relative;
+  padding: 24px 26px;
+  background: linear-gradient(180deg, rgba(18, 25, 43, 0.82), rgba(12, 17, 30, 0.8));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124,156,255,0.24);
+}
+
+.timeline-layout {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.timeline-side {
+  display: grid;
+  gap: 14px;
+}
+
+.timeline-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.company-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  padding: 10px;
+  object-fit: contain;
+  background: rgba(255,255,255,0.97);
+  border: 1px solid rgba(255,255,255,0.12);
+  flex-shrink: 0;
+}
+
+.company-meta h3 {
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.company-meta p {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.role-line {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.timeline-body {
+  min-width: 0;
+}
+
+.timeline-body > p {
+  margin-bottom: 14px;
+}
+
+.timeline-body ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+.timeline-body li + li {
+  margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+  .timeline-layout {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
   </style>
 </head>
 <body>
@@ -957,13 +1057,13 @@
 
   <header class="site-header" aria-label="Primary">
     <div class="container nav-shell">
-      <a class="brand" href="#top" aria-label="Damian Perera home">
+      <a class="brand" href="#" aria-label="Damian Perera home">
         <span class="brand-mark">
-          <img src="assets/img/testimonials/damian.jpeg" alt="Damian Perera profile photo" />
+          <img src="/assets/img/testimonials/damian.jpeg" alt="Damian Perera profile photo" />
         </span>
         <span class="brand-copy">
           <span>Damian Perera</span>
-          <span class="role">Software Engineer</span>
+          <span class="role">@damian</span>
         </span>
       </a>
 
@@ -985,7 +1085,7 @@
             <div class="hero-photo-wrap">
               <img
                 class="hero-photo"
-                src="assets/img/testimonials/damian.jpeg"
+                src="/assets/img/testimonials/damian.jpeg"
                 alt="Portrait of Damian Perera"
               />
             </div>
@@ -1000,7 +1100,7 @@
                 <span>Most of my work is centered on services, APIs, architecture, and system reliability.</span>
               </div>
               <div class="mini-stat">
-                <strong>Product + Platform</strong>
+                <strong>Product <i class="bi bi-suit-heart"></i> Platform</strong>
                 <span>Comfortable working at the intersection of technical depth, product needs, and long-term maintainability.</span>
               </div>
               <div class="mini-stat">
@@ -1021,13 +1121,13 @@
             <div class="hero-meta" aria-label="Key skills">
               <span class="pill">Distributed Systems</span>
               <span class="pill">Cloud Infrastructure</span>
-              <span class="pill">Platform Engineering</span>
+              <span class="pill">Product Engineering</span>
             </div>
 
             <div class="hero-actions">
-              <a class="button-primary" href="/resume">
+              <a class="button-primary" href="#about">
                 <i class="bi bi-file-earmark-person"></i>
-                View Resume
+                About Me
               </a>
               <a class="button-secondary" href="#projects">
                 <i class="bi bi-grid-1x2"></i>
@@ -1119,104 +1219,132 @@
 
         <div class="timeline">
           <article class="timeline-card reveal">
-            <div class="timeline-top">
-              <img src="assets/img/portfolio/personio.png" alt="Personio logo" class="company-logo" />
-              <div class="company-meta">
-                <h3>Personio</h3>
-                <p>2021 - Present</p>
-              </div>
-            </div>
+  <div class="timeline-layout">
+    <div class="timeline-side">
+      <div class="timeline-top">
+        <img src="/assets/img/portfolio/personio.png" alt="Personio logo" class="company-logo" />
+        <div class="company-meta">
+          <h3>Personio</h3>
+          <p>2021 - Present</p>
+        </div>
+      </div>
 
-            <div class="role-line">
-              <span class="tag">Backend Systems</span>
-              <span class="tag">Platform Modernization</span>
-            </div>
+      <div class="role-line">
+        <span class="tag">Distributed Systems</span>
+        <span class="tag">Graph Data</span>
+        <span class="tag">Core Platform Services</span>
+      </div>
+    </div>
 
-            <p>
-              Personio is a German HR software company focused on simplifying and automating people operations for SMEs.
-            </p>
+    <div class="timeline-body">
+      <p>
+        Personio is a German HR software company focused on simplifying and automating people operations for SMEs.
+      </p>
 
-            <ul>
-              <li>Worked on complex backend and platform challenges in a high-growth product environment.</li>
-              <li>Contributed to modernization initiatives and large-scale architectural change.</li>
-              <li>Collaborated across engineering and product functions to improve delivery quality and system evolution.</li>
-            </ul>
-          </article>
+      <ul>
+        <li>Worked on complex backend and platform challenges in a high-growth product environment.</li>
+        <li>Contributed to modernization initiatives and large-scale architectural change.</li>
+        <li>Collaborated across engineering and product functions to improve delivery quality and system evolution.</li>
+      </ul>
+    </div>
+  </div>
+</article>
 
-          <article class="timeline-card reveal">
-            <div class="timeline-top">
-              <img src="assets/img/portfolio/sysco-labs.png" alt="Sysco LABS logo" class="company-logo" />
-              <div class="company-meta">
-                <h3>Sysco LABS</h3>
-                <p>2018 - 2021</p>
-              </div>
-            </div>
 
-            <div class="role-line">
-              <span class="tag">Full-Stack Systems</span>
-              <span class="tag">Enterprise Scale</span>
-            </div>
-
-            <p>
-              Sysco LABS is the technology arm of Sysco Corporation, supporting large-scale systems in the food service and hospitality domain.
-            </p>
-
-            <ul>
-              <li>Delivered across full-stack and backend initiatives in a large enterprise technology context.</li>
-              <li>Worked through high-pressure technical problems with strong ownership and execution.</li>
-              <li>Built experience across architecture, performance, delivery, and stakeholder collaboration.</li>
-            </ul>
-          </article>
 
           <article class="timeline-card reveal">
-            <div class="timeline-top">
-              <img src="assets/img/portfolio/cloudcone.png" alt="CloudCone logo" class="company-logo" />
-              <div class="company-meta">
-                <h3>CloudCone</h3>
-                <p>2017 - 2018</p>
-              </div>
-            </div>
+  <div class="timeline-layout">
+    <div class="timeline-side">
+      <div class="timeline-top">
+        <img src="/assets/img/portfolio/sysco-labs.png" alt="Sysco LABS logo" class="company-logo" />
+        <div class="company-meta">
+          <h3>Sysco LABS</h3>
+          <p>2018 - 2021</p>
+        </div>
+      </div>
 
-            <div class="role-line">
-              <span class="tag">Cloud Platform</span>
-              <span class="tag">Infrastructure</span>
-              <span class="tag">Operations</span>
-            </div>
+      <div class="role-line">
+        <span class="tag">Full-Stack Development</span>
+        <span class="tag">Platform Engineering</span>
+        <span class="tag">Enterprise Scale</span>
+      </div>
+    </div>
 
-            <p>
-              CloudCone is a cloud computing platform offering cloud and dedicated infrastructure services.
-            </p>
+    <div class="timeline-body">
+      <p>
+        Sysco LABS is the technology arm of Sysco Corporation, supporting large-scale systems in the food service and hospitality domain.
+      </p>
 
-            <ul>
-              <li>Worked close to infrastructure-oriented systems and operational concerns.</li>
-              <li>Built experience relevant to hosting platforms, service reliability, and developer-facing tooling.</li>
-            </ul>
-          </article>
+      <ul>
+        <li>Delivered across full-stack and backend initiatives in a large enterprise technology context.</li>
+        <li>Worked through high-pressure technical problems with strong ownership and execution.</li>
+        <li>Built experience across architecture, performance, delivery, and stakeholder collaboration.</li>
+      </ul>
+    </div>
+  </div>
+</article>
 
-          <article class="timeline-card reveal">
-            <div class="timeline-top">
-              <img src="assets/img/portfolio/zone24x7.png" alt="Zone24x7 logo" class="company-logo" />
-              <div class="company-meta">
-                <h3>Zone24x7</h3>
-                <p>2016 - 2017</p>
-              </div>
-            </div>
+<article class="timeline-card reveal">
+  <div class="timeline-layout">
+    <div class="timeline-side">
+      <div class="timeline-top">
+        <img src="/assets/img/portfolio/cloudcone.png" alt="CloudCone logo" class="company-logo" />
+        <div class="company-meta">
+          <h3>CloudCone</h3>
+          <p>2017 - 2018</p>
+        </div>
+      </div>
 
-            <div class="role-line">
-              <span class="tag">R&D</span>
-              <span class="tag">Augmented Reality</span>
-              <span class="tag">Client Systems</span>
-            </div>
+      <div class="role-line">
+        <span class="tag">Cloud Platform</span>
+        <span class="tag">Infrastructure</span>
+      </div>
+    </div>
 
-            <p>
-              Zone24x7 is a technology and research company partnering with startups and large enterprises.
-            </p>
+    <div class="timeline-body">
+      <p>
+        CloudCone is a cloud computing platform offering cloud and dedicated infrastructure services.
+      </p>
 
-            <ul>
-              <li>Built an early foundation across product engineering, solution delivery, and fast-changing technical environments.</li>
-              <li>Worked with varied business problems and engineering constraints across client-facing work.</li>
-            </ul>
-          </article>
+      <ul>
+        <li>Worked close to infrastructure-oriented systems and operational concerns.</li>
+        <li>Built experience relevant to hosting platforms, service reliability, and developer-facing tooling.</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
+<article class="timeline-card reveal">
+  <div class="timeline-layout">
+    <div class="timeline-side">
+      <div class="timeline-top">
+        <img src="/assets/img/portfolio/zone24x7.png" alt="Zone24x7 logo" class="company-logo" />
+        <div class="company-meta">
+          <h3>Zone24x7</h3>
+          <p>2016 - 2017</p>
+        </div>
+      </div>
+
+      <div class="role-line">
+        <span class="tag">Augmented Reality</span>
+        <span class="tag">R&D</span>
+        <span class="tag">Client Systems</span>
+      </div>
+    </div>
+
+    <div class="timeline-body">
+      <p>
+        Zone24x7 is a technology and research company partnering with startups and large enterprises.
+      </p>
+
+      <ul>
+        <li>Built an early foundation across product engineering, solution delivery, and fast-changing technical environments.</li>
+        <li>Worked with varied business problems and engineering constraints across client-facing work.</li>
+      </ul>
+    </div>
+  </div>
+</article>
+
         </div>
       </div>
     </section>
@@ -1234,7 +1362,7 @@
 
         <div class="projects-grid">
           <article class="project-card reveal">
-            <p class="project-label">Featured iOS App</p>
+            <p class="project-label"><i class="bi bi-apple"></i> iOS App</p>
             <h3>Tank Radar</h3>
             <p>
               A product-focused iOS app designed to help drivers find the best fuel prices, view price insights, maintain refueling history
@@ -1257,12 +1385,12 @@
               </div>
             </div>
             <a class="text-link" href="https://tankradar.perera.io" target="_blank" rel="noopener noreferrer">
-              View App <i class="bi bi-arrow-up-right"></i>
+              View App <i class="bi bi-arrow-up-right-circle-fill"></i>
             </a>
           </article>
 
           <article class="project-card reveal">
-            <p class="project-label">GitHub Repository</p>
+            <p class="project-label"><i class="bi bi-github"></i> GitHub Repository</p>
             <h3>openwrt-rpi</h3>
             <p>
               An OpenWrt build for Raspberry Pi which lets you run a full-featured router OS on a Raspberry Pi. It's a fun way to learn about networking, Linux, and embedded systems.
@@ -1273,15 +1401,15 @@
             </div>
 
             <a class="text-link" href="https://github.com/damianperera/openwrt-rpi" target="_blank" rel="noopener noreferrer">
-              View on GitHub <i class="bi bi-arrow-up-right"></i>
+              View on GitHub <i class="bi bi-arrow-up-right-circle-fill"></i>
             </a>
           </article>
 
           <article class="project-card reveal">
-            <p class="project-label">GitHub Repository</p>
+            <p class="project-label"><i class="bi bi-github"></i> GitHub Repository</p>
             <h3>mvg-departures</h3>
             <p>
-              This web application is designed to serve as a live MVG transport tracker for your home or office, similar to the live schedules displayed in public.
+              A web application designed to serve as a live MVG transport tracker for your home or office, similar to the live schedules displayed in public.
             </p>
 
             <div class="project-stack">
@@ -1289,7 +1417,7 @@
             </div>
 
             <a class="text-link" href="https://github.com/damianperera/mvg-departures" target="_blank" rel="noopener noreferrer">
-              View on GitHub <i class="bi bi-arrow-up-right"></i>
+              View on GitHub <i class="bi bi-arrow-up-right-circle-fill"></i>
             </a>
           </article>
         </div>
@@ -1306,7 +1434,7 @@
             </div>
 
             <p>
-              A fuller set of recommendations from managers, architects, product partners, and former colleagues
+              Recommendations from managers, architects, product partners, and former colleagues
               is available on LinkedIn. They give a good sense of how I work across technical depth, ownership,
               collaboration, and long-term thinking.
             </p>
@@ -1325,7 +1453,7 @@
               rel="noopener noreferrer"
               style="margin-top: 20px;"
             >
-              Open LinkedIn profile <i class="bi bi-arrow-up-right"></i>
+              Open LinkedIn profile <i class="bi bi-arrow-up-right-circle-fill"></i>
             </a>
           </section>
 
@@ -1336,24 +1464,33 @@
             </div>
 
             <p>
-              LinkedIn is the best place for recommendations and recent profile details, while GitHub, Medium,
-              and my resume provide a broader view of my work and interests.
+              LinkedIn is the best place for recommendations and recent profile details, while GitHub and Medium provide a broader view of my work and interests.
             </p>
 
 
             <div class="hero-actions" style="margin-top: 24px; margin-bottom: 0;">
-              <a class="button-primary" href="/resume">
-                <i class="bi bi-file-earmark-person"></i>
-                Open Resume
-              </a>
               <a
-                class="button-secondary"
+                class="button-primary"
                 href="https://www.linkedin.com/in/damianperera"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <i class="bi bi-linkedin"></i>
                 LinkedIn
+              </a>
+              <a class="button-secondary" 
+                href="https://www.github.com/damianperera"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-github"></i>
+                GitHub
+              </a>
+              <a class="button-secondary" 
+                href="https://www.medium.com/@damianperera"
+                target="_blank"
+                rel="noopener noreferrer">
+                <i class="bi bi-medium"></i>
+                Medium
               </a>
             </div>
           </aside>
@@ -1365,7 +1502,7 @@
   <footer class="footer">
     <div class="container footer-inner">
       <div>Damian Perera · Software Engineer · Germany</div>
-      <div><a href="/impressum">Legal Notice <i class="bi bi-arrow-up-right"></i></a></div>
+      <div><a href="/impressum">Legal Notice <i class="bi bi-arrow-up-right-circle-fill"></i></a></div>
     </div>
   </footer>
 
