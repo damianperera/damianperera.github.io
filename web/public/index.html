@@ -139,7 +139,7 @@
     html {
       scroll-behavior: smooth;
       background: var(--bg);
-      scroll-snap-type: y proximity;
+      scroll-snap-type: none;
       scroll-padding-top: 0;
     }
 
@@ -147,8 +147,7 @@
       html { scroll-behavior: auto; }
     }
 
-    /* Gentle snap on mobile/tablet (never traps tall content); firm snap on
-       desktop where every section fits the viewport. */
+    /* Section snapping on desktop only; mobile/tablet scrolls freely. */
     @media (min-width: 900px) {
       html { scroll-snap-type: y mandatory; }
     }
