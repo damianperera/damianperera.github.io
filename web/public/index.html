@@ -384,6 +384,11 @@
     }
 
     .chalk-group { filter: url(#chalk); }
+    /* When JS + motion are active, hide the animated diagram groups before first
+       paint so nothing flashes fully-drawn before gsap sets its hidden state. The
+       draw script reveals them again once the elements are hidden. No-JS and
+       reduced-motion never get .js-draw, so the diagrams stay visible for them. */
+    .js-draw .scene[data-scene-index] .chalk-group { visibility: hidden; }
 
     /* ---------- landing ---------- */
     .scene-landing { padding-top: 0; }
@@ -407,12 +412,20 @@
       letter-spacing: normal;
       color: var(--chalk);
       margin: 0;
+      /* room past the glyph ink so the write-on clip never shaves the last
+         letter's tail (Caveat glyphs overhang their advance width) */
+      padding: 0 0.16em;
     }
 
     .role-line {
       font-size: clamp(0.95rem, 2vw, 1.15rem);
       color: var(--chalk-muted);
       font-weight: 500;
+    }
+    /* on mobile the subtitle wraps to two lines with no separator */
+    @media (max-width: 600px) {
+      .role-line .role-sep { display: none; }
+      .role-line .role-loc { display: block; }
     }
 
     .scroll-cue {
@@ -861,6 +874,13 @@
     }
 
   </style>
+  <script>
+    // Flag set before first paint so the CSS above can hide animated diagram
+    // groups until gsap has set their hidden state (prevents a fully-drawn flash).
+    if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js-draw');
+    }
+  </script>
 </head>
 <body>
 
@@ -913,7 +933,7 @@
     <section id="top" class="scene scene-landing">
       <div class="landing-inner">
         <h1 class="wordmark">Damian Perera</h1>
-        <p class="role-line">Software Engineer, Distributed Systems · Germany</p>
+        <p class="role-line">Software Engineer, Distributed Systems<span class="role-sep"> · </span><span class="role-loc">Germany</span></p>
         <div class="scroll-cue scroll-cue-anim" aria-hidden="true">
           <svg class="chalk-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
@@ -1197,11 +1217,11 @@
                 <svg class="chalk-svg" viewBox="0 0 300 54" xmlns="http://www.w3.org/2000/svg">
                   <g class="chalk-group">
                     <rect class="chalk-draw" x="3" y="3" width="294" height="48" rx="24" pathLength="1" />
-                    <path class="chalk-draw" d="M15 33 C15 27 18 26 22 26 L27 26 L32 19 L43 19 L48 26 L52 26 C55 26 56 28 56 33" pathLength="1" />
-                    <path class="chalk-draw" d="M17 34 L54 34" pathLength="1" />
-                    <circle class="chalk-draw" cx="25" cy="34" r="4.6" pathLength="1" />
-                    <circle class="chalk-draw" cx="46" cy="34" r="4.6" pathLength="1" />
-                    <text x="70" y="35" class="chalk-text" font-size="21">Works with Apple CarPlay</text>
+                    <path class="chalk-draw" d="M25 33 C25 27 28 26 32 26 L37 26 L42 19 L53 19 L58 26 L62 26 C65 26 66 28 66 33" pathLength="1" />
+                    <path class="chalk-draw" d="M27 34 L64 34" pathLength="1" />
+                    <circle class="chalk-draw" cx="35" cy="34" r="4.6" pathLength="1" />
+                    <circle class="chalk-draw" cx="56" cy="34" r="4.6" pathLength="1" />
+                    <text x="80" y="35" class="chalk-text" font-size="21">Works with Apple CarPlay</text>
                   </g>
                 </svg>
               </span>
@@ -1364,11 +1384,11 @@
       if (!prefersReduced && window.gsap && 'IntersectionObserver' in window) {
         var animScenes = document.querySelectorAll('.scene[data-scene-index]');
 
-        // rootMargin shrinks the effective viewport to its middle band, so a
-        // scene only fires once the user has actually arrived on it (roughly
-        // centered), rather than as soon as it edges into view. Combined with
-        // play-once (unobserve after play) this makes diagrams draw on
-        // arrival, one at a time, instead of several firing together.
+        // Fire when the DIAGRAM itself enters view (each timeline is attached to the
+        // scene's diagram element, not the whole scene), so a tall section whose text
+        // is on screen while the diagram is still below the fold does not start
+        // drawing early. Central band = draws as you actually reach the diagram.
+        var drawRootMargin = '-18% 0px -18% 0px';
         var drawObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting && entry.target._drawTL) {
@@ -1376,12 +1396,22 @@
               drawObserver.unobserve(entry.target);
             }
           });
-        }, { root: null, rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+        }, { root: null, rootMargin: drawRootMargin, threshold: 0 });
 
         animScenes.forEach(function (scene) {
           var els = Array.prototype.slice.call(
             scene.querySelectorAll('.chalk-draw, .chalk-text')
           );
+          // The How scene ships both a desktop and a mobile diagram variant (one is
+          // display:none). Exclude the hidden variant's elements, or they'd consume
+          // the first half of the timeline before the visible diagram starts drawing.
+          els = els.filter(function (el) {
+            // the portrait frame draws on its own when the photo appears, not with
+            // the rest of the contact section
+            if (el.closest('.portrait-frame')) return false;
+            var r = el.getBoundingClientRect();
+            return r.width > 0 || r.height > 0;
+          });
           if (!els.length) return;
 
           var shapes = els.filter(function (el) { return el.classList.contains('chalk-draw'); });
@@ -1396,10 +1426,17 @@
               var rr = document.getElementById(rid);
               if (rr) {
                 t.setAttribute('data-rw', rr.getAttribute('width'));
-                gsap.set(rr, { attr: { width: 0 } });
+                // start non-zero: a 0-width SVG clip region is treated as "no clip"
+                // on some mobile browsers, which flashes the whole label; 0.6px is a
+                // valid (invisible) region so the clip actually clips.
+                gsap.set(rr, { attr: { width: 0.6 } });
+                gsap.set(t, { opacity: 0 });
               }
             } else {
-              gsap.set(t, { clipPath: 'inset(0% 100% 0% 0%)', webkitClipPath: 'inset(0% 100% 0% 0%)' });
+              // opacity is the cross-browser hide (Safari does not reliably apply
+              // clip-path to SVG <text>); clip-path does the left-to-right write-on
+              // where supported.
+              gsap.set(t, { opacity: 0, clipPath: 'inset(0% 100% 0% 0%)', webkitClipPath: 'inset(0% 100% 0% 0%)' });
             }
           });
 
@@ -1433,6 +1470,9 @@
                 // rotated label: grow its SVG clip rect upward = writes bottom to top
                 var rr = document.getElementById(rid);
                 if (rr) {
+                  // ease opacity in (rather than snap) so even if a browser mis-clips
+                  // for a frame it can't harshly flash the whole label
+                  tl.to(el, { opacity: 1, duration: Math.min(0.35, dur * 0.5), ease: 'power1.out' }, pos);
                   tl.to(rr, {
                     attr: { width: parseFloat(el.getAttribute('data-rw')) },
                     ease: 'power2.out',
@@ -1441,6 +1481,7 @@
                 }
               } else {
                 tl.to(el, {
+                  opacity: 1,
                   clipPath: 'inset(0% 0% 0% 0%)',
                   webkitClipPath: 'inset(0% 0% 0% 0%)',
                   ease: 'power2.out',
@@ -1461,14 +1502,25 @@
             }
           });
 
-          scene._drawTL = tl;
-          drawObserver.observe(scene);
+          // observe the diagram (fallback to the scene) so the draw fires when the
+          // diagram is actually in view, not when the section's text edges in
+          var trigger = scene.querySelector('.scene-diagram') || scene;
+          trigger._drawTL = tl;
+          drawObserver.observe(trigger);
         });
 
         // Career: companies rise in from below, and downward sketched arrows
         // are drawn between the logos, when the section is reached.
         var careerWrap = document.querySelector('.career-wrap');
         if (careerWrap) {
+          // hide the cards at load (not only when built) so they never flash in
+          // before the timeline runs, e.g. in Safari. Opacity only -- no transform,
+          // so buildCareer measures the chips at their resting positions and the
+          // sketched arrows line up (the y-offset is applied later, in buildCareer).
+          gsap.set(careerWrap.querySelectorAll('.career-card'), { opacity: 0 });
+          // hide the static fallback rail immediately so its thin line never shows
+          // before the sketched arrows are drawn on scroll.
+          careerWrap.classList.add('rail-js');
           var careerBuilt = false;
           var careerObs = new IntersectionObserver(function (entries) {
             entries.forEach(function (en) {
@@ -1478,6 +1530,26 @@
             });
           }, { root: null, rootMargin: '-22% 0px -22% 0px', threshold: 0 });
           careerObs.observe(careerWrap);
+        }
+
+        // Portrait: draw the chalk frame around the photo when the photo appears.
+        var portraitFrame = document.querySelector('.portrait-frame');
+        if (portraitFrame) {
+          var framePath = portraitFrame.querySelector('.chalk-draw');
+          if (framePath) {
+            gsap.set(framePath, { strokeDasharray: 1, strokeDashoffset: 1 });
+            var frameDrawn = false;
+            var frameObs = new IntersectionObserver(function (entries) {
+              entries.forEach(function (en) {
+                if (en.isIntersecting && !frameDrawn) {
+                  frameDrawn = true;
+                  gsap.to(framePath, { strokeDashoffset: 0, duration: 1.7, ease: 'power2.out' });
+                  frameObs.unobserve(en.target);
+                }
+              });
+            }, { root: null, rootMargin: '0px 0px -12% 0px', threshold: 0.25 });
+            frameObs.observe(portraitFrame);
+          }
         }
 
         function buildCareer(wrap) {
@@ -1524,6 +1596,11 @@
           }
         }
       }
+
+      // Reveal the diagram groups now that their elements are hidden (or, if gsap
+      // never loaded, so the diagrams simply show). Runs whether or not the block
+      // above ran, so the groups are never left permanently hidden.
+      document.documentElement.classList.remove('js-draw');
     });
   </script>
 </body>
