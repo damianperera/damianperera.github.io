@@ -1293,7 +1293,7 @@
           <img src="/assets/img/testimonials/damian.jpeg" width="547" height="547" alt="Damian Perera" loading="lazy" decoding="async" />
           <svg aria-hidden="true" viewBox="0 0 316 316" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
-              <path class="chalk-draw" d="M10 12 C110 4, 230 6, 306 10 C310 112, 308 214, 304 304 C204 310, 104 308, 12 304 C6 214, 8 112, 10 12 Z" pathLength="1" />
+              <path class="chalk-draw portrait-frame-path" d="M10 12 C110 4, 230 6, 306 10 C310 112, 308 214, 304 304 C204 310, 104 308, 12 304 C6 214, 8 112, 10 12 Z" />
             </g>
           </svg>
         </div>
@@ -1536,14 +1536,17 @@
         var portraitFrame = document.querySelector('.portrait-frame');
         if (portraitFrame) {
           var framePath = portraitFrame.querySelector('.chalk-draw');
-          if (framePath) {
-            gsap.set(framePath, { strokeDasharray: 1, strokeDashoffset: 1 });
+          if (framePath && framePath.getTotalLength) {
+            // Use the path's real geometric length (pathLength was removed) so the
+            // dash covers the whole outline and the offset animates as a true draw.
+            var frameLen = framePath.getTotalLength() || 1200;
+            gsap.set(framePath, { strokeDasharray: frameLen, strokeDashoffset: frameLen });
             var frameDrawn = false;
             var frameObs = new IntersectionObserver(function (entries) {
               entries.forEach(function (en) {
                 if (en.isIntersecting && !frameDrawn) {
                   frameDrawn = true;
-                  gsap.to(framePath, { strokeDashoffset: 0, duration: 1.7, ease: 'power2.out' });
+                  gsap.to(framePath, { strokeDashoffset: 0, duration: 2.2, ease: 'power1.inOut' });
                   frameObs.unobserve(en.target);
                 }
               });
