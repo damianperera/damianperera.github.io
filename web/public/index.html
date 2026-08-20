@@ -139,16 +139,16 @@
     html {
       scroll-behavior: smooth;
       background: var(--bg);
-      scroll-snap-type: none;
-      scroll-padding-top: var(--header-h);
+      scroll-snap-type: y proximity;
+      scroll-padding-top: 0;
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
     }
 
-    /* Firm section snapping only on desktop; mobile scrolls freely so tall
-       sections are never clipped or over-scrolled. */
+    /* Gentle snap on mobile/tablet (never traps tall content); firm snap on
+       desktop where every section fits the viewport. */
     @media (min-width: 900px) {
       html { scroll-snap-type: y mandatory; }
     }
@@ -370,7 +370,7 @@
     .chalk-draw {
       fill: none;
       stroke: var(--chalk-strong);
-      stroke-linecap: round;
+      stroke-linecap: butt;
       stroke-linejoin: round;
       stroke-dasharray: none;
       stroke-dashoffset: 0;
@@ -861,9 +861,6 @@
       white-space: nowrap;
     }
 
-    @media (prefers-reduced-motion: reduce), (pointer: coarse) {
-      .scroll-cue-anim { animation: none; }
-    }
   </style>
 </head>
 <body>
@@ -935,12 +932,14 @@
         <div class="scene-text">
           <p class="eyebrow">Who</p>
           <h2>I build the systems everything else depends on.</h2>
-          <p class="scene-body">I'm a software engineer based in Germany. I design and lead changes from the first RFC through to production, usually across a few teams at once. I've spent a decade on the distributed systems that have to stay up while a business grows around them. I care more about choosing the right approach than defending a favourite one, and I'm happiest seeing the impact of my work in real life.</p>
+          <p class="scene-body">I'm a software engineer based in Germany. I design and lead changes from the first RFC through to production, usually across a few teams at once.</p>
+          <p class="scene-body" style="margin-top: 16px;">I've spent a decade on the distributed systems that have to stay up while a business grows around them.</p>
+          <p class="scene-body" style="margin-top: 16px;">I care more about choosing the right approach than defending a favourite one, and I'm happiest seeing the impact of my work in real life.</p>
         </div>
         <div class="scene-diagram" aria-hidden="true">
           <svg class="chalk-svg" viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
-              <ellipse class="chalk-draw" cx="350" cy="300" rx="78" ry="40" pathLength="1" />
+              <ellipse class="chalk-draw chalk-amber" cx="350" cy="300" rx="78" ry="40" pathLength="1" />
               <text x="350" y="308" text-anchor="middle" class="chalk-text" font-size="26">Damian</text>
 
               <!-- left column: labels right-aligned at x=220, arrows end just right of them -->
@@ -992,7 +991,8 @@
         <div class="scene-text">
           <p class="eyebrow">How I work</p>
           <h2>I design for the day things go wrong.</h2>
-          <p class="scene-body">Most outages come from a corner of a system nobody fully understood. So I put in the effort up front to reverse engineer the problem, then design the solution with clear boundaries, sensible failure modes, and enough visibility to trust it in production. I bring the rest of the team with me through RFCs and honest discussion, because the design everyone understands is the one that survives contact with reality.</p>
+          <p class="scene-body">Most outages come from a corner of a system nobody fully understood. So I put in the effort up front to reverse engineer the problem, then design the solution with clear boundaries, sensible failure modes, and enough visibility to trust it in production.</p>
+          <p class="scene-body" style="margin-top: 16px;">I bring the rest of the team with me through RFCs and honest discussion, because the design everyone understands is the one that survives contact with reality.</p>
         </div>
         <div class="scene-diagram" aria-hidden="true">
           <div class="diagram-desktop">
@@ -1111,8 +1111,8 @@
               <rect class="chalk-draw" x="40" y="324" width="320" height="82" rx="10" pathLength="1" />
               <text x="200" y="372" text-anchor="middle" class="chalk-text" font-size="26">Infrastructure</text>
 
-              <path class="chalk-draw" d="M412 212 L412 30" pathLength="1" marker-end="url(#arrowhead)" />
-              <path class="chalk-draw" d="M412 212 L412 394" pathLength="1" marker-end="url(#arrowhead)" />
+              <path class="chalk-draw chalk-amber" d="M412 212 L412 30" pathLength="1" marker-end="url(#arrowhead-amber)" />
+              <path class="chalk-draw chalk-amber" d="M412 212 L412 394" pathLength="1" marker-end="url(#arrowhead-amber)" />
               <clipPath id="clipE2E" clipPathUnits="userSpaceOnUse"><rect id="rectE2E" x="395" y="188" width="118" height="42" /></clipPath>
               <text transform="rotate(-90 452 212)" x="452" y="212" text-anchor="middle" class="chalk-text chalk-amber" font-size="23" data-reveal="up" data-clip-rect="rectE2E" clip-path="url(#clipE2E)">end-to-end</text>
             </g>
@@ -1333,6 +1333,23 @@
 
       var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+      // Hero intro: write the name on (chalk left-to-right reveal), then bring in
+      // the role line and the scroll cue.
+      if (!prefersReduced && window.gsap) {
+        var heroName = document.querySelector('.scene-landing .wordmark');
+        var heroRole = document.querySelector('.scene-landing .role-line');
+        var heroCue = document.querySelector('.scene-landing .scroll-cue');
+        if (heroName) {
+          gsap.set(heroName, { clipPath: 'inset(0 100% 0 0)', webkitClipPath: 'inset(0 100% 0 0)' });
+          gsap.set([heroRole, heroCue], { autoAlpha: 0, y: 12 });
+          var htl = gsap.timeline({ delay: 0.2 });
+          htl.to(heroName, { clipPath: 'inset(0 0% 0 0)', webkitClipPath: 'inset(0 0% 0 0)', duration: 1.2, ease: 'power2.out' });
+          htl.set(heroName, { clipPath: 'none', webkitClipPath: 'none' });
+          htl.to(heroRole, { autoAlpha: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.25');
+          htl.to(heroCue, { autoAlpha: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.3');
+        }
+      }
+
       // Chalk-draw animation: shapes draw in (strokeDashoffset 1 -> 0) and text
       // labels "write on" (left-to-right clip-path reveal), timed on scene-enter.
       // Runs on desktop AND mobile/touch; only reduced-motion skips it, in which
@@ -1499,7 +1516,7 @@
             p.setAttribute('fill', 'none');
             p.setAttribute('stroke', 'var(--chalk-muted)');
             p.setAttribute('stroke-width', '2');
-            p.setAttribute('stroke-linecap', 'round');
+            p.setAttribute('stroke-linecap', 'butt');
             p.setAttribute('stroke-linejoin', 'round');
             p.setAttribute('pathLength', '1');
             rail.appendChild(p);
