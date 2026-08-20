@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#14161a" />
 
-  <title>Damian Perera — Backend & Distributed Systems Engineer</title>
+  <title>Damian Perera</title>
   <meta
     name="description"
-    content="Damian Perera is a Senior Software Engineer in Munich building backend and distributed systems at scale — event-driven microservices, Kafka, gRPC, cloud infrastructure and API design."
+    content="Damian Perera is a Senior Software Engineer in Germany who designs and leads distributed systems at scale, from architecture and RFCs through to production."
   />
   <meta
     name="keywords"
-    content="Damian Perera, Software Engineer, Senior Software Engineer, Backend Engineer, Distributed Systems, Kotlin, Java, Spring, Kafka, gRPC, GraphQL, PostgreSQL, AWS, Kubernetes, Event-Driven Microservices, API Design, Munich, iOS app, CarPlay"
+    content="Damian Perera, Software Engineer, Senior Software Engineer, Backend Engineer, Distributed Systems, Kotlin, Java, Spring, Kafka, gRPC, GraphQL, PostgreSQL, AWS, Kubernetes, Event-Driven Microservices, API Design, Germany, iOS app, CarPlay"
   />
   <meta name="author" content="Damian Perera" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,10 +20,10 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Damian Perera" />
-  <meta property="og:title" content="Damian Perera — Backend & Distributed Systems Engineer" />
+  <meta property="og:title" content="Damian Perera · Senior Software Engineer" />
   <meta
     property="og:description"
-    content="Senior Software Engineer in Munich building backend and distributed systems at scale — event-driven microservices, Kafka, gRPC, cloud infrastructure and API design."
+    content="Senior Software Engineer in Germany. I design and lead distributed systems at scale, from the first RFC through to production."
   />
   <meta property="og:url" content="https://damian.perera.io/" />
   <meta property="og:image" content="https://damian.perera.io/assets/img/social-banner.jpg" />
@@ -32,10 +32,10 @@
   <meta property="og:locale" content="en_US" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Damian Perera — Backend & Distributed Systems Engineer" />
+  <meta name="twitter:title" content="Damian Perera · Senior Software Engineer" />
   <meta
     name="twitter:description"
-    content="Senior Software Engineer in Munich building backend and distributed systems at scale — event-driven microservices, Kafka, gRPC, cloud infrastructure and API design."
+    content="Senior Software Engineer in Germany. I design and lead distributed systems at scale, from the first RFC through to production."
   />
   <meta name="twitter:image" content="https://damian.perera.io/assets/img/social-banner.jpg" />
 
@@ -60,11 +60,10 @@
         "url": "https://damian.perera.io/",
         "image": "https://damian.perera.io/assets/img/testimonials/damian.jpeg",
         "jobTitle": "Senior Software Engineer",
-        "description": "Senior Software Engineer focused on distributed systems at scale — backend engineering, event-driven microservices, and cloud infrastructure.",
+        "description": "Senior Software Engineer focused on distributed systems at scale, backend engineering, event-driven microservices, and cloud infrastructure.",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "DE",
-          "addressLocality": "Munich"
+          "addressCountry": "DE"
         },
         "alumniOf": {
           "@type": "CollegeOrUniversity",
@@ -140,10 +139,18 @@
     html {
       scroll-behavior: smooth;
       background: var(--bg);
+      scroll-snap-type: none;
+      scroll-padding-top: var(--header-h);
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+    }
+
+    /* Firm section snapping only on desktop; mobile scrolls freely so tall
+       sections are never clipped or over-scrolled. */
+    @media (min-width: 900px) {
+      html { scroll-snap-type: y mandatory; }
     }
 
     body {
@@ -152,7 +159,7 @@
       color: var(--chalk);
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     img { max-width: 100%; display: block; }
@@ -264,17 +271,22 @@
       border-bottom-color: var(--amber);
     }
 
-    @media (max-width: 520px) {
-      .header-inner { padding: 0 14px; gap: 10px; }
+    @media (max-width: 640px) {
+      .header-inner { padding: 0 14px; gap: 8px; }
       .brand { display: none; }
-      .site-header nav { gap: 12px; }
-      .site-header nav a { font-size: 0.82rem; padding: 20px 1px 16px; }
+      .site-header nav { gap: 10px; }
+      .site-header nav a { font-size: 0.8rem; padding: 20px 1px 16px; }
     }
 
-    @media (max-width: 360px) {
+    @media (max-width: 400px) {
       .header-inner { padding: 0 10px; }
-      .site-header nav { gap: 8px; }
-      .site-header nav a { font-size: 0.74rem; }
+      .site-header nav { gap: 7px; }
+      .site-header nav a { font-size: 0.7rem; padding: 20px 0 16px; }
+    }
+
+    @media (max-width: 340px) {
+      .site-header nav { gap: 5px; }
+      .site-header nav a { font-size: 0.64rem; }
     }
 
     /* ---------- scenes ---------- */
@@ -285,9 +297,15 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding: calc(var(--header-h) + 28px) 0 48px;
+      padding: calc(var(--header-h) + 28px) 0 28px;
       position: relative;
       overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    .scene-landing {
+      align-items: center;
     }
 
     .scene-inner {
@@ -338,22 +356,6 @@
       line-height: 1.65;
       color: var(--chalk-muted);
       max-width: 54ch;
-    }
-
-    .fact-list, .annotation-list {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 14px;
-    }
-
-    .fact-list li, .annotation-list li {
-      font-size: 0.85rem;
-      color: var(--chalk-strong);
-      border: 1px solid var(--grid-line);
-      background: var(--bg-panel);
-      border-radius: 999px;
-      padding: 7px 14px;
     }
 
     .scene-diagram {
@@ -414,13 +416,6 @@
       font-weight: 500;
     }
 
-    .thesis {
-      margin-top: 14px;
-      font-size: clamp(1.1rem, 2.6vw, 1.5rem);
-      color: var(--chalk-strong);
-      font-weight: 600;
-    }
-
     .scroll-cue {
       margin-top: 56px;
       width: 84px;
@@ -435,44 +430,236 @@
       50% { transform: translateY(6px); }
     }
 
-    /* ---------- scale scene ---------- */
-    .stat-block {
-      margin: 4px 0 20px;
-      border-left: 3px solid var(--amber);
-      padding-left: 18px;
-    }
-    .stat-number {
-      display: block;
-      font-size: clamp(2.2rem, 6vw, 3.4rem);
-      font-weight: 800;
-      color: var(--amber);
-      line-height: 1.05;
-    }
-    .stat-caption {
-      margin-top: 6px;
-      font-size: 0.95rem;
+    /* ---------- skills scene ---------- */
+    .scene-skills .scene-text { max-width: 46ch; }
+    .stack-caption {
+      text-align: center;
+      margin-top: 14px;
+      font-family: var(--serif-hand);
+      font-size: 1.15rem;
       color: var(--chalk-muted);
-      max-width: 40ch;
     }
 
-    /* ---------- work scene ---------- */
-    .scene-work .scene-inner {
-      display: block;
-      max-width: var(--maxw);
-    }
-    .scene-work .scene-text { max-width: 62ch; }
-
-    .project-grid {
+    .skills-board {
       margin-top: 40px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       position: relative;
       z-index: 3;
     }
 
-    .project-card {
+    .skills-group {
+      padding: 22px 22px 20px;
+      border: 1px solid var(--grid-line);
+      background: var(--bg-panel);
+      border-radius: 10px 6px 12px 8px;
+      transform: rotate(-0.4deg);
+    }
+    .skills-group:nth-child(even) { transform: rotate(0.5deg); }
+    .skills-group:nth-child(3n) { transform: rotate(-0.2deg); }
+
+    .skills-group-title {
+      font-family: var(--serif-hand);
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--amber);
+      margin: 0 0 12px;
+    }
+
+    .skills-items {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+    .skills-items li {
+      font-size: 0.94rem;
+      line-height: 1.6;
+      color: var(--chalk-strong);
+    }
+    .skills-items li:not(:last-child)::after {
+      content: "\00b7";
+      margin: 0 8px;
+      color: var(--chalk-muted);
+    }
+
+    /* ---------- career scene ---------- */
+    .scene-career .scene-inner,
+    .scene-projects .scene-inner {
       display: block;
+      max-width: var(--maxw);
+    }
+    .scene-career .scene-text,
+    .scene-projects .scene-text { max-width: 62ch; }
+
+    /* career = vertical timeline: a chalk rail threads through each company's
+       logo "station", with the years and paragraph beside it. */
+    .career-list {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      position: relative;
+      padding-left: 8px;
+      z-index: 3;
+    }
+    .career-wrap { position: relative; }
+    .career-rail {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
+    }
+    /* static fallback rail (no-JS / reduced-motion); hidden once JS sketches it */
+    .career-list::before {
+      content: "";
+      position: absolute;
+      left: 36px;
+      top: 30px;
+      bottom: 30px;
+      width: 2px;
+      background: var(--chalk-muted);
+      opacity: 0.32;
+      z-index: 0;
+    }
+    .career-wrap.rail-js .career-list::before { display: none; }
+
+    .career-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+      min-height: 112px;  /* equal spacing between logos -> equal-length arrows */
+    }
+    @media (max-width: 600px) {
+      .career-card { min-height: 128px; }
+    }
+
+    .career-logo-chip {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 auto;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: #f4f1ea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      box-shadow: 0 0 0 6px var(--bg);
+    }
+    .career-logo-chip img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .career-card-body { flex: 1 1 auto; min-width: 0; padding-top: 4px; }
+
+    .career-card-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--chalk);
+    }
+    .career-card-years {
+      font-weight: 500;
+      color: var(--chalk-muted);
+    }
+    .career-card-desc {
+      margin-top: 8px;
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: var(--chalk-muted);
+    }
+
+    @media (max-width: 480px) {
+      .career-list { gap: 26px; }
+      .career-list::before { left: 31px; }
+      .career-card { gap: 16px; }
+      .career-logo-chip { width: 46px; height: 46px; }
+    }
+
+    @media (max-width: 600px) {
+      .diagram-desktop { display: none; }
+      .diagram-mobile { display: block; }
+    }
+    @media (min-width: 601px) {
+      .diagram-desktop { display: block; }
+      .diagram-mobile { display: none; }
+    }
+
+    /* ---------- projects scene ---------- */
+    .project-layout {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 20px;
+      align-items: stretch;
+      position: relative;
+      z-index: 3;
+    }
+    @media (max-width: 760px) {
+      .project-layout { grid-template-columns: 1fr; }
+    }
+
+    .project-highlight {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      border: 1px solid var(--grid-line);
+      background: var(--bg-panel);
+      border-radius: 14px;
+      padding: 30px;
+      transition: border-color 0.25s ease, transform 0.25s ease;
+    }
+    .project-highlight:hover, .project-highlight:focus-visible {
+      border-color: var(--amber);
+      transform: translateY(-2px);
+    }
+    .project-highlight .project-icon-lg {
+      width: 88px;
+      height: 88px;
+      margin-bottom: 18px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+    .project-highlight .project-eyebrow-tag {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .project-highlight .project-name {
+      font-weight: 800;
+      font-size: 1.55rem;
+      color: var(--chalk);
+    }
+    .project-highlight .project-desc {
+      display: block;
+      margin-top: 12px;
+      font-size: 1.02rem;
+      line-height: 1.65;
+      color: var(--chalk-muted);
+      max-width: 44ch;
+    }
+
+    .project-side {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
       text-decoration: none;
       border: 1px solid var(--grid-line);
       background: var(--bg-panel);
@@ -484,48 +671,59 @@
       border-color: var(--amber);
       transform: translateY(-2px);
     }
+    .project-card .project-glyph {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 10px;
+    }
+    .project-card .project-glyph .chalk-svg { width: 100%; height: 100%; overflow: visible; }
     .project-card .project-name {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--chalk);
     }
     .project-card .project-tag {
       display: block;
-      margin-top: 4px;
-      font-size: 0.78rem;
+      margin-top: 3px;
+      font-size: 0.74rem;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--amber);
     }
     .project-card .project-desc {
       display: block;
-      margin-top: 10px;
-      font-size: 0.92rem;
-      line-height: 1.55;
+      margin-top: 8px;
+      font-size: 0.88rem;
+      line-height: 1.5;
       color: var(--chalk-muted);
+      flex-grow: 1;
     }
 
-    .timeline {
-      margin-top: 48px;
+    .project-badges {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 20px 32px;
-      align-items: center;
+      gap: 12px 16px;
+      margin-top: auto;
+      padding-top: 26px;
     }
-    .timeline li {
-      display: flex;
+    .chalk-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
+      height: 54px;
+      width: 290px;
+      max-width: 100%;
+    }
+    .chalk-pill .chalk-svg { width: 100%; height: 100%; overflow: visible; }
+    .badge-store {
+      display: inline-flex;
+      align-items: center;
       font-size: 0.9rem;
-      color: var(--chalk-muted);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--amber);
+      white-space: nowrap;
     }
-    .timeline img {
-      height: 22px;
-      width: auto;
-      filter: grayscale(1) brightness(1.6);
-      opacity: 0.75;
-    }
-    .timeline .co-name { color: var(--chalk-strong); font-weight: 600; }
 
     /* ---------- contact scene ---------- */
     .scene-contact .scene-inner {
@@ -588,11 +786,39 @@
       border-color: #f0bd63;
     }
 
-    .recommend-note {
-      margin-top: 22px;
-      font-size: 0.88rem;
+    .recommend-callout {
+      margin-top: 30px;
+      max-width: 46ch;
+      border: 1px solid var(--grid-line);
+      border-left: 3px solid var(--amber);
+      background: var(--bg-panel);
+      border-radius: 8px;
+      padding: 18px 20px;
+    }
+    .recommend-callout h3 {
+      margin: 0 0 8px;
+      font-family: var(--serif-hand);
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: var(--chalk);
+    }
+    .recommend-callout p {
+      font-size: 0.92rem;
+      line-height: 1.6;
       color: var(--chalk-muted);
-      max-width: 42ch;
+      margin: 0;
+    }
+    .recommend-callout .recommend-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--amber);
+      text-decoration: none;
+    }
+    .recommend-callout .recommend-link:hover,
+    .recommend-callout .recommend-link:focus-visible {
+      text-decoration: underline;
     }
 
     /* ---------- footer ---------- */
@@ -601,6 +827,7 @@
       z-index: 2;
       border-top: 1px solid var(--grid-line);
       padding: 28px 24px 40px;
+      scroll-snap-align: end;
     }
     .site-footer .footer-inner {
       max-width: var(--maxw);
@@ -676,8 +903,9 @@
       <nav aria-label="Section navigation">
         <a href="#who" data-nav="who">Who</a>
         <a href="#how" data-nav="how">How</a>
-        <a href="#scale" data-nav="scale">Scale</a>
-        <a href="#work" data-nav="work">Work</a>
+        <a href="#skills" data-nav="skills">Skills</a>
+        <a href="#career" data-nav="career">Career</a>
+        <a href="#projects" data-nav="projects">Projects</a>
         <a href="#contact" data-nav="contact">Contact</a>
       </nav>
     </div>
@@ -685,237 +913,361 @@
 
   <main>
 
-    <!-- SCENE 0 — LANDING -->
+    <!-- SCENE 0 - LANDING -->
     <section id="top" class="scene scene-landing">
       <div class="landing-inner">
         <h1 class="wordmark">Damian Perera</h1>
-        <p class="role-line">Backend &amp; distributed systems · Munich</p>
-        <p class="thesis">I draw systems before I build them.</p>
+        <p class="role-line">Software Engineer, Distributed Systems · Germany</p>
         <div class="scroll-cue scroll-cue-anim" aria-hidden="true">
           <svg class="chalk-svg" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
               <rect class="chalk-draw" x="34" y="12" width="52" height="14" rx="4" pathLength="1" />
-              <path class="chalk-draw" d="M60 34 L60 96" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="60" y="122" text-anchor="middle" class="chalk-text" font-size="20">Scroll</text>
+              <path class="chalk-draw" d="M60 34 L60 108" pathLength="1" marker-end="url(#arrowhead)" />
             </g>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- SCENE 1 — WHO -->
+    <!-- SCENE 1 - WHO -->
     <section id="who" class="scene scene-who" data-scene-index="1">
       <div class="scene-inner">
         <div class="scene-text">
           <p class="eyebrow">Who</p>
-          <h2>I've spent ten years making backends behave under pressure.</h2>
-          <p class="scene-body">Senior Software Engineer — backend and distributed systems — in Munich, by way of Colombo. First-Class BEng from Westminster. I've built for platforms measured in billions and for a Raspberry Pi on my desk. The interesting part never changes: make the complicated thing dependable.</p>
-          <ul class="fact-list">
-            <li>10 years</li>
-            <li>Backend &amp; distributed systems</li>
-            <li>Munich ← Colombo</li>
-            <li>AWS Community Builder</li>
-            <li>Teaches Python · ReDI School</li>
-          </ul>
+          <h2>I build the systems everything else depends on.</h2>
+          <p class="scene-body">I'm a software engineer based in Germany. I design and lead changes from the first RFC through to production, usually across a few teams at once. I've spent a decade on the distributed systems that have to stay up while a business grows around them. I care more about choosing the right approach than defending a favourite one, and I'm happiest seeing the impact of my work in real life.</p>
         </div>
         <div class="scene-diagram" aria-hidden="true">
-          <svg class="chalk-svg" viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg">
+          <svg class="chalk-svg" viewBox="0 0 700 600" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
-              <ellipse class="chalk-draw" cx="280" cy="230" rx="70" ry="38" pathLength="1" />
-              <text x="280" y="238" text-anchor="middle" class="chalk-text" font-size="26">Damian</text>
+              <ellipse class="chalk-draw" cx="350" cy="300" rx="78" ry="40" pathLength="1" />
+              <text x="350" y="308" text-anchor="middle" class="chalk-text" font-size="26">Damian</text>
 
-              <path class="chalk-draw" d="M215 210 C150 170, 110 130, 80 90" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="60" y="70" class="chalk-text" font-size="19">10 years</text>
+              <!-- left column: labels right-aligned at x=220, arrows end just right of them -->
+              <path class="chalk-draw" d="M305 266 C270 200, 248 132, 228 98" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="220" y="88" text-anchor="end" class="chalk-text" font-size="23">
+                <tspan x="220" dy="0">Distributed systems</tspan>
+                <tspan x="220" dy="28">at scale</tspan>
+              </text>
 
-              <path class="chalk-draw" d="M232 195 C205 145, 200 95, 210 46" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="222" y="30" text-anchor="end" class="chalk-text" font-size="16">Backend &amp; distributed systems</text>
+              <path class="chalk-draw" d="M274 296 C258 297, 242 299, 228 300" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="220" y="294" text-anchor="end" class="chalk-text" font-size="23">
+                <tspan x="220" dy="0">Planning</tspan>
+                <tspan x="220" dy="28">+ leading change</tspan>
+              </text>
 
-              <path class="chalk-draw" d="M345 195 C375 150, 390 105, 400 58" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="330" y="44" class="chalk-text" font-size="19">Munich ← Colombo</text>
+              <path class="chalk-draw" d="M305 334 C270 400, 248 466, 228 500" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="220" y="490" text-anchor="end" class="chalk-text" font-size="23">
+                <tspan x="220" dy="0">Architecture</tspan>
+                <tspan x="220" dy="28">+ system design</tspan>
+              </text>
 
-              <path class="chalk-draw" d="M350 250 C420 260, 460 280, 500 310" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="380" y="335" class="chalk-text diagram-detail" font-size="19">AWS Community Builder</text>
+              <!-- right column: labels left-aligned at x=480, arrows end just left of them -->
+              <path class="chalk-draw" d="M395 266 C430 200, 452 132, 472 98" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="480" y="88" text-anchor="start" class="chalk-text" font-size="23">
+                <tspan x="480" dy="0">Cross-functional</tspan>
+                <tspan x="480" dy="28">alignment</tspan>
+              </text>
 
-              <path class="chalk-draw" d="M245 260 C210 300, 170 330, 120 355" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="70" y="378" class="chalk-text diagram-detail" font-size="19">Teaches Python · ReDI School</text>
+              <path class="chalk-draw" d="M426 296 C442 297, 458 299, 472 300" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="480" y="294" text-anchor="start" class="chalk-text" font-size="23">
+                <tspan x="480" dy="0">Technical direction</tspan>
+                <tspan x="480" dy="28">+ RFCs</tspan>
+              </text>
+
+              <path class="chalk-draw" d="M395 334 C430 400, 452 466, 472 500" pathLength="1" marker-end="url(#arrowhead)" />
+              <text x="480" y="490" text-anchor="start" class="chalk-text" font-size="23">
+                <tspan x="480" dy="0">Right tool</tspan>
+                <tspan x="480" dy="28">for the job</tspan>
+              </text>
             </g>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- SCENE 2 — HOW -->
+    <!-- SCENE 2 - HOW -->
     <section id="how" class="scene scene-how" data-scene-index="2">
       <div class="scene-inner">
         <div class="scene-text">
           <p class="eyebrow">How I work</p>
-          <h2>Before I write a line, I draw.</h2>
-          <p class="scene-body">Chalk is cheap; production is not. I sketch the flow first — the boxes, the arrows, the thing that fails at 2 a.m. — until the design is boring enough to trust. Then I build it, these days with a lot of agentic AI in the loop. But the thinking still starts on the board.</p>
-          <ol class="fact-list">
-            <li>Sketch</li>
-            <li>Align</li>
-            <li>Architect</li>
-            <li>Ship</li>
-            <li>Operate</li>
-          </ol>
+          <h2>I design for the day things go wrong.</h2>
+          <p class="scene-body">Most outages come from a corner of a system nobody fully understood. So I put in the effort up front to reverse engineer the problem, then design the solution with clear boundaries, sensible failure modes, and enough visibility to trust it in production. I bring the rest of the team with me through RFCs and honest discussion, because the design everyone understands is the one that survives contact with reality.</p>
         </div>
         <div class="scene-diagram" aria-hidden="true">
-          <svg class="chalk-svg" viewBox="0 0 620 300" xmlns="http://www.w3.org/2000/svg">
-            <g class="chalk-group">
-              <rect class="chalk-draw" x="10" y="90" width="96" height="52" rx="6" pathLength="1" />
-              <text x="58" y="122" text-anchor="middle" class="chalk-text" font-size="19">Sketch</text>
+          <div class="diagram-desktop">
+            <svg class="chalk-svg" viewBox="0 0 840 410" xmlns="http://www.w3.org/2000/svg">
+              <g class="chalk-group">
+                <rect class="chalk-draw" x="18" y="78" width="120" height="66" rx="8" pathLength="1" />
+                <text x="78" y="117" text-anchor="middle" class="chalk-text" font-size="21">Clients</text>
 
-              <path class="chalk-draw" d="M106 116 L136 116" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M138 111 L184 111" pathLength="1" marker-end="url(#arrowhead)" />
 
-              <rect class="chalk-draw" x="140" y="90" width="96" height="52" rx="6" pathLength="1" />
-              <text x="188" y="122" text-anchor="middle" class="chalk-text" font-size="19">Align</text>
+                <rect class="chalk-draw" x="188" y="78" width="120" height="66" rx="8" pathLength="1" />
+                <text x="248" y="117" text-anchor="middle" class="chalk-text" font-size="21">API</text>
 
-              <path class="chalk-draw" d="M236 116 L266 116" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M308 111 L356 111" pathLength="1" marker-end="url(#arrowhead)" />
 
-              <rect class="chalk-draw" x="270" y="90" width="106" height="52" rx="6" pathLength="1" />
-              <text x="323" y="122" text-anchor="middle" class="chalk-text" font-size="19">Architect</text>
+                <rect class="chalk-draw chalk-amber" x="360" y="46" width="238" height="208" rx="16" stroke-dasharray="6 8" pathLength="1" />
+                <text x="479" y="34" text-anchor="middle" class="chalk-text chalk-amber" font-size="17">clear boundaries</text>
 
-              <path class="chalk-draw" d="M376 116 L406 116" pathLength="1" marker-end="url(#arrowhead)" />
+                <rect class="chalk-draw" x="382" y="62" width="194" height="52" rx="8" pathLength="1" />
+                <text x="479" y="94" text-anchor="middle" class="chalk-text" font-size="21">Service A</text>
 
-              <rect class="chalk-draw" x="410" y="90" width="90" height="52" rx="6" pathLength="1" />
-              <text x="455" y="122" text-anchor="middle" class="chalk-text" font-size="19">Ship</text>
+                <rect class="chalk-draw" x="382" y="124" width="194" height="52" rx="8" pathLength="1" />
+                <text x="479" y="156" text-anchor="middle" class="chalk-text" font-size="21">Service B</text>
 
-              <path class="chalk-draw" d="M500 116 L530 116" pathLength="1" marker-end="url(#arrowhead)" />
+                <rect class="chalk-draw" x="382" y="186" width="194" height="52" rx="8" pathLength="1" />
+                <text x="479" y="218" text-anchor="middle" class="chalk-text" font-size="21">Service C</text>
 
-              <rect class="chalk-draw" x="534" y="90" width="96" height="52" rx="6" pathLength="1" />
-              <text x="582" y="122" text-anchor="middle" class="chalk-text" font-size="19">Operate</text>
+                <path class="chalk-draw" d="M600 111 L680 111" pathLength="1" marker-end="url(#arrowhead)" />
 
-              <path class="chalk-draw diagram-detail" d="M582 142 C582 210, 58 210, 58 148" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="300" y="230" text-anchor="middle" class="chalk-text diagram-detail" font-size="20">iterate</text>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
+                <ellipse class="chalk-draw" cx="740" cy="111" rx="54" ry="20" pathLength="1" />
+                <path class="chalk-draw" d="M686 111 L686 169 C686 182 794 182 794 169 L794 111" pathLength="1" />
+                <ellipse class="chalk-draw" cx="740" cy="169" rx="54" ry="20" pathLength="1" />
+                <text x="740" y="118" text-anchor="middle" class="chalk-text" font-size="19">Data</text>
 
-    <!-- SCENE 3 — SCALE -->
-    <section id="scale" class="scene scene-scale" data-scene-index="3">
-      <div class="scene-inner">
-        <div class="scene-text">
-          <p class="eyebrow">At scale</p>
-          <h2>I build systems that stay up when they matter.</h2>
-          <div class="stat-block">
-            <span class="stat-number">$20B+ <small style="font-size:0.4em;font-weight:600;">/ year</small></span>
-            <p class="stat-caption">order-processing platform I helped build and scale at Sysco.</p>
+                <rect class="chalk-draw chalk-amber" x="188" y="322" width="606" height="70" rx="12" pathLength="1" />
+                <text x="491" y="352" text-anchor="middle" class="chalk-text" font-size="22">Events</text>
+                <text x="491" y="376" text-anchor="middle" class="chalk-text chalk-amber" font-size="15">message bus</text>
+
+                <path class="chalk-draw" d="M245 322 L245 148" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M251 148 L251 322" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M476 322 L476 258" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M482 258 L482 322" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M740 191 L740 322" pathLength="1" marker-end="url(#arrowhead)" />
+              </g>
+            </svg>
           </div>
-          <p class="scene-body">At Sysco I was on the founding team for Sysco Shop — replacing COBOL and DB2 with services that move more than twenty billion dollars a year. Circuit breakers, read-replicas, async logging; p99 latency down about a third. At Personio I moved a legacy monolith onto event-driven microservices on Kafka and gRPC, and held 99.9% uptime through a high-risk, multi-month migration. The domain-specific identifier system I designed there is now the standard every engineering team builds on.</p>
-          <ul class="annotation-list">
-            <li>99.9% uptime</li>
-            <li>p99 −30%</li>
-            <li>adopted as platform standard</li>
-          </ul>
+          <div class="diagram-mobile">
+            <svg class="chalk-svg" viewBox="0 0 380 545" xmlns="http://www.w3.org/2000/svg">
+              <g class="chalk-group">
+                <rect class="chalk-draw" x="122" y="20" width="196" height="52" rx="8" pathLength="1" />
+                <text x="220" y="53" text-anchor="middle" class="chalk-text" font-size="21">Clients</text>
+
+                <path class="chalk-draw" d="M220 72 L220 96" pathLength="1" marker-end="url(#arrowhead)" />
+
+                <rect class="chalk-draw" x="122" y="100" width="196" height="52" rx="8" pathLength="1" />
+                <text x="220" y="133" text-anchor="middle" class="chalk-text" font-size="21">API</text>
+
+                <path class="chalk-draw" d="M220 152 L220 178" pathLength="1" marker-end="url(#arrowhead)" />
+
+                <rect class="chalk-draw chalk-amber" x="104" y="196" width="232" height="196" rx="14" stroke-dasharray="6 8" pathLength="1" />
+                <text x="220" y="188" text-anchor="middle" class="chalk-text chalk-amber" font-size="15">clear boundaries</text>
+
+                <rect class="chalk-draw" x="118" y="208" width="204" height="50" rx="8" pathLength="1" />
+                <text x="220" y="239" text-anchor="middle" class="chalk-text" font-size="20">Service A</text>
+
+                <rect class="chalk-draw" x="118" y="266" width="204" height="50" rx="8" pathLength="1" />
+                <text x="220" y="297" text-anchor="middle" class="chalk-text" font-size="20">Service B</text>
+
+                <rect class="chalk-draw" x="118" y="324" width="204" height="50" rx="8" pathLength="1" />
+                <text x="220" y="355" text-anchor="middle" class="chalk-text" font-size="20">Service C</text>
+
+                <path class="chalk-draw" d="M220 392 L220 418" pathLength="1" marker-end="url(#arrowhead)" />
+
+                <ellipse class="chalk-draw" cx="220" cy="446" rx="66" ry="19" pathLength="1" />
+                <path class="chalk-draw" d="M154 446 L154 508 C154 520 286 520 286 508 L286 446" pathLength="1" />
+                <ellipse class="chalk-draw" cx="220" cy="508" rx="66" ry="19" pathLength="1" />
+                <text x="220" y="453" text-anchor="middle" class="chalk-text" font-size="18">Data</text>
+
+                <rect class="chalk-draw chalk-amber" x="14" y="100" width="66" height="408" rx="12" pathLength="1" />
+                <clipPath id="clipEvBus" clipPathUnits="userSpaceOnUse"><rect id="rectEvBus" x="-46" y="288" width="186" height="34" /></clipPath>
+                <text transform="rotate(-90 47 304)" x="47" y="304" text-anchor="middle" class="chalk-text chalk-amber" font-size="20" data-reveal="up" data-clip-rect="rectEvBus" clip-path="url(#clipEvBus)">Events · message bus</text>
+
+                <path class="chalk-draw" d="M80 123 L118 123" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M118 129 L80 129" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M80 291 L104 291" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M104 297 L80 297" pathLength="1" marker-end="url(#arrowhead)" />
+                <path class="chalk-draw" d="M154 446 L80 446" pathLength="1" marker-end="url(#arrowhead)" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 3 - SKILLS -->
+    <section id="skills" class="scene scene-skills" data-scene-index="3">
+      <div class="scene-inner">
+        <div class="scene-text">
+          <p class="eyebrow">Skills</p>
+          <h2>I fit the work to the problem.</h2>
+          <p class="scene-body">10 years in, I've built backends, mobile apps & front ends, infrastructure, and the awkward glue between them - in whatever language and shape the problem actually called for. The range is deliberate: I would rather understand a system end-to-end and choose the right approach than reach for the same familiar tool every time.</p>
+          <p class="scene-body" style="margin-top: 18px;">I work by owning a change from the first RFC through design, build, rollout, and the on-call that comes after, keeping a few teams pointed the same way, and staying close enough to the code to know it holds together. Deep where it needs to be - broad everywhere else.</p>
         </div>
         <div class="scene-diagram" aria-hidden="true">
-          <svg class="chalk-svg" viewBox="0 0 620 340" xmlns="http://www.w3.org/2000/svg">
+          <svg class="chalk-svg" viewBox="0 0 520 470" xmlns="http://www.w3.org/2000/svg">
             <g class="chalk-group">
-              <rect class="chalk-draw" x="10" y="30" width="90" height="46" rx="6" pathLength="1" />
-              <text x="55" y="58" text-anchor="middle" class="chalk-text" font-size="16">Client</text>
+              <rect class="chalk-draw" x="40" y="18" width="320" height="82" rx="10" pathLength="1" />
+              <text x="200" y="66" text-anchor="middle" class="chalk-text" font-size="26">Product &amp; UI</text>
 
-              <path class="chalk-draw" d="M100 53 L138 53" pathLength="1" marker-end="url(#arrowhead)" />
+              <rect class="chalk-draw" x="40" y="120" width="320" height="82" rx="10" pathLength="1" />
+              <text x="200" y="168" text-anchor="middle" class="chalk-text" font-size="26">Services &amp; APIs</text>
 
-              <rect class="chalk-draw" x="142" y="30" width="100" height="46" rx="6" pathLength="1" />
-              <text x="192" y="58" text-anchor="middle" class="chalk-text" font-size="16">Edge / BFF</text>
+              <rect class="chalk-draw" x="40" y="222" width="320" height="82" rx="10" pathLength="1" />
+              <text x="200" y="270" text-anchor="middle" class="chalk-text" font-size="26">Data</text>
 
-              <path class="chalk-draw" d="M242 53 L280 53" pathLength="1" marker-end="url(#arrowhead)" />
+              <rect class="chalk-draw" x="40" y="324" width="320" height="82" rx="10" pathLength="1" />
+              <text x="200" y="372" text-anchor="middle" class="chalk-text" font-size="26">Infrastructure</text>
 
-              <rect class="chalk-draw" x="284" y="30" width="110" height="46" rx="6" pathLength="1" />
-              <text x="339" y="58" text-anchor="middle" class="chalk-text" font-size="16">Services</text>
-
-              <path class="chalk-draw diagram-detail" d="M339 76 C339 110, 339 110, 339 138" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="410" y="112" class="chalk-text diagram-detail" font-size="16">circuit breaker</text>
-
-              <rect class="chalk-draw" x="279" y="142" width="120" height="58" rx="6" pathLength="1" />
-              <path class="chalk-draw" d="M291 168 L387 168" pathLength="1" />
-              <path class="chalk-draw" d="M291 180 L387 180" pathLength="1" />
-              <text x="339" y="160" text-anchor="middle" class="chalk-text" font-size="16">Kafka</text>
-
-              <path class="chalk-draw" d="M339 200 L339 236" pathLength="1" marker-end="url(#arrowhead)" />
-
-              <ellipse class="chalk-draw" cx="339" cy="276" rx="70" ry="20" pathLength="1" />
-              <path class="chalk-draw" d="M269 276 L269 300 C269 312, 409 312, 409 300 L409 276" pathLength="1" />
-              <text x="339" y="282" text-anchor="middle" class="chalk-text" font-size="16">Datastore</text>
-
-              <path class="chalk-draw diagram-detail" d="M409 288 C460 288, 480 268, 495 238" pathLength="1" marker-end="url(#arrowhead)" />
-              <text x="470" y="224" class="chalk-text diagram-detail" font-size="16">read-replica</text>
-
-              <rect class="chalk-draw chalk-amber" x="10" y="238" width="150" height="50" rx="6" pathLength="1" />
-              <text x="85" y="270" text-anchor="middle" class="chalk-text chalk-fill-amber" font-size="20">$20B+/yr</text>
+              <path class="chalk-draw" d="M412 212 L412 30" pathLength="1" marker-end="url(#arrowhead)" />
+              <path class="chalk-draw" d="M412 212 L412 394" pathLength="1" marker-end="url(#arrowhead)" />
+              <clipPath id="clipE2E" clipPathUnits="userSpaceOnUse"><rect id="rectE2E" x="395" y="188" width="118" height="42" /></clipPath>
+              <text transform="rotate(-90 452 212)" x="452" y="212" text-anchor="middle" class="chalk-text chalk-amber" font-size="23" data-reveal="up" data-clip-rect="rectE2E" clip-path="url(#clipE2E)">end-to-end</text>
             </g>
           </svg>
         </div>
       </div>
     </section>
 
-    <!-- SCENE 4 — WORK -->
-    <section id="work" class="scene scene-work" data-scene-index="4">
+    <!-- SCENE 4 - CAREER -->
+    <section id="career" class="scene scene-career" data-scene-index="4">
       <div class="scene-inner">
         <div class="scene-text">
-          <p class="eyebrow">What I ship</p>
-          <h2>I take things end to end — even the small ones.</h2>
-          <p class="scene-body">The instinct doesn't switch off after work.</p>
+          <p class="eyebrow">Career</p>
+          <h2>Where I've spent it.</h2>
+          <p class="scene-body">The short version. The longer one is a good conversation.</p>
         </div>
 
-        <div class="scene-diagram" aria-hidden="true" style="margin-top:8px;">
-          <svg class="chalk-svg" viewBox="0 0 620 60" xmlns="http://www.w3.org/2000/svg">
-            <g class="chalk-group">
-              <path class="chalk-draw" d="M40 30 L580 30" pathLength="1" marker-end="url(#arrowhead)" />
-              <circle class="chalk-draw" cx="105" cy="30" r="9" pathLength="1" />
-              <circle class="chalk-draw" cx="310" cy="30" r="9" pathLength="1" />
-              <circle class="chalk-draw" cx="515" cy="30" r="9" pathLength="1" />
-            </g>
-          </svg>
-        </div>
-
-        <ul class="project-grid">
-          <li>
-            <a class="project-card" href="https://tankradar.perera.io" target="_blank" rel="noopener">
-              <span class="project-name">Tank Radar</span>
-              <span class="project-tag">iOS · CarPlay</span>
-              <span class="project-desc">Finds drivers the cheapest fuel and follows them into the car via Apple CarPlay.</span>
-            </a>
+        <div class="career-wrap">
+          <svg class="career-rail" aria-hidden="true"></svg>
+        <ul class="career-list">
+          <li class="career-card">
+            <span class="career-logo-chip">
+              <img src="/assets/img/portfolio/zone24x7.png" alt="Zone24x7" width="56" height="56" loading="lazy" decoding="async" />
+            </span>
+            <div class="career-card-body">
+              <span class="career-card-title">Zone24x7</span>
+              <span class="career-card-years"> · 2016 - 2017</span>
+              <p class="career-card-desc">Started out in R&amp;D, prototyping across mixed reality and IoT and shipping systems for enterprise clients.</p>
+            </div>
           </li>
-          <li>
+          <li class="career-card">
+            <span class="career-logo-chip">
+              <img src="/assets/img/portfolio/cloudcone.png" alt="CloudCone" width="56" height="56" loading="lazy" decoding="async" />
+            </span>
+            <div class="career-card-body">
+              <span class="career-card-title">CloudCone</span>
+              <span class="career-card-years"> · 2017 - 2018</span>
+              <p class="career-card-desc">Built and ran cloud and infrastructure products end-to-end, close to the metal, for a hosting platform.</p>
+            </div>
+          </li>
+          <li class="career-card">
+            <span class="career-logo-chip">
+              <img src="/assets/img/portfolio/sysco-labs.png" alt="Sysco LABS" width="56" height="56" loading="lazy" decoding="async" />
+            </span>
+            <div class="career-card-body">
+              <span class="career-card-title">Sysco LABS</span>
+              <span class="career-card-years"> · 2018 - 2021</span>
+              <p class="career-card-desc">Grew into a Lead Engineer on the systems behind a $20B+ business. I owned architecture and delivery for high-throughput services and helped raise the operational bar for the whole team.</p>
+            </div>
+          </li>
+          <li class="career-card">
+            <span class="career-logo-chip">
+              <img src="/assets/img/portfolio/personio.png" alt="Personio" width="56" height="56" loading="lazy" decoding="async" />
+            </span>
+            <div class="career-card-body">
+              <span class="career-card-title">Personio</span>
+              <span class="career-card-years"> · 2021 - Present</span>
+              <p class="career-card-desc">Senior Engineer on the core platform. I design and lead changes end-to-end, set patterns other teams now build on, and work across engineering and product to ship things that stay up.</p>
+            </div>
+          </li>
+        </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCENE 5 - PROJECTS -->
+    <section id="projects" class="scene scene-projects" data-scene-index="5">
+      <div class="scene-inner">
+        <div class="scene-text">
+          <p class="eyebrow">On the side</p>
+          <h2>The things I build for myself.</h2>
+          <p class="scene-body">Same instincts, smaller stakes.</p>
+        </div>
+
+        <div class="project-layout">
+          <a class="project-highlight" href="https://tankradar.perera.io" target="_blank" rel="noopener">
+            <img class="project-icon-lg" src="/assets/img/tankradar-icon.png" width="88" height="88" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <span class="project-eyebrow-tag">My latest · iOS</span>
+            <span class="project-name">Tank Radar</span>
+            <span class="project-desc">An iOS app that finds you the cheapest fuel nearby and rides along in the car over CarPlay.</span>
+            <span class="project-badges">
+              <span class="chalk-pill" aria-hidden="true">
+                <svg class="chalk-svg" viewBox="0 0 300 54" xmlns="http://www.w3.org/2000/svg">
+                  <g class="chalk-group">
+                    <rect class="chalk-draw" x="3" y="3" width="294" height="48" rx="24" pathLength="1" />
+                    <path class="chalk-draw" d="M15 33 C15 27 18 26 22 26 L27 26 L32 19 L43 19 L48 26 L52 26 C55 26 56 28 56 33" pathLength="1" />
+                    <path class="chalk-draw" d="M17 34 L54 34" pathLength="1" />
+                    <circle class="chalk-draw" cx="25" cy="34" r="4.6" pathLength="1" />
+                    <circle class="chalk-draw" cx="46" cy="34" r="4.6" pathLength="1" />
+                    <text x="70" y="35" class="chalk-text" font-size="21">Works with Apple CarPlay</text>
+                  </g>
+                </svg>
+              </span>
+              <span class="badge-store">Available on the App Store ↗</span>
+            </span>
+          </a>
+
+          <div class="project-side">
             <a class="project-card" href="https://github.com/damianperera/mvg-departures" target="_blank" rel="noopener">
+              <span class="project-glyph" aria-hidden="true">
+                <svg class="chalk-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                  <g class="chalk-group">
+                    <rect class="chalk-draw" x="14" y="18" width="52" height="34" rx="4" pathLength="1" />
+                    <path class="chalk-draw" d="M22 26 L58 26" pathLength="1" />
+                    <path class="chalk-draw" d="M22 34 L50 34" pathLength="1" />
+                    <path class="chalk-draw" d="M22 42 L44 42" pathLength="1" />
+                    <path class="chalk-draw" d="M40 52 L40 62" pathLength="1" />
+                    <path class="chalk-draw" d="M26 62 L54 62" pathLength="1" />
+                    <circle class="chalk-draw chalk-amber" cx="40" cy="35" r="14" pathLength="1" />
+                  </g>
+                </svg>
+              </span>
               <span class="project-name">mvg-departures</span>
-              <span class="project-tag">web · live transit</span>
-              <span class="project-desc">Munich's live departure board, on my wall at home.</span>
+              <span class="project-tag">web</span>
+              <span class="project-desc">A live public-transit board for my hallway.</span>
             </a>
-          </li>
-          <li>
             <a class="project-card" href="https://github.com/damianperera/openwrt-rpi" target="_blank" rel="noopener">
+              <span class="project-glyph" aria-hidden="true">
+                <svg class="chalk-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+                  <g class="chalk-group">
+                    <rect class="chalk-draw" x="12" y="32" width="56" height="22" rx="4" pathLength="1" />
+                    <circle class="chalk-draw chalk-amber" cx="24" cy="43" r="3" pathLength="1" />
+                    <circle class="chalk-draw" cx="34" cy="43" r="3" pathLength="1" />
+                    <path class="chalk-draw" d="M46 32 L46 16" pathLength="1" />
+                    <path class="chalk-draw" d="M56 32 L56 20" pathLength="1" />
+                    <path class="chalk-draw" d="M40 54 L40 64" pathLength="1" marker-end="url(#arrowhead)" />
+                    <path class="chalk-draw" d="M56 54 L56 64" pathLength="1" marker-end="url(#arrowhead)" />
+                  </g>
+                </svg>
+              </span>
               <span class="project-name">openwrt-rpi</span>
               <span class="project-tag">networking · Linux</span>
-              <span class="project-desc">A full router OS running on a Raspberry Pi.</span>
+              <span class="project-desc">A full router OS on a Raspberry Pi.</span>
             </a>
-          </li>
-        </ul>
-
-        <ul class="timeline">
-          <li><img src="/assets/img/portfolio/personio.png" width="512" height="512" alt="" loading="lazy" decoding="async" /><span class="co-name">Personio</span> ’21–now</li>
-          <li><img src="/assets/img/portfolio/sysco-labs.png" width="1391" height="309" alt="" loading="lazy" decoding="async" /><span class="co-name">Sysco LABS</span> ’18–’21</li>
-          <li><img src="/assets/img/portfolio/cloudcone.png" width="256" height="256" alt="" loading="lazy" decoding="async" /><span class="co-name">CloudCone</span> ’17–’18</li>
-          <li><img src="/assets/img/portfolio/zone24x7.png" width="303" height="306" alt="" loading="lazy" decoding="async" /><span class="co-name">Zone24x7</span> ’16–’17</li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SCENE 5 — CONTACT -->
-    <section id="contact" class="scene scene-contact" data-scene-index="5">
+    <!-- SCENE 6 - CONTACT -->
+    <section id="contact" class="scene scene-contact" data-scene-index="6">
       <div class="scene-inner">
         <div class="scene-text">
-          <p class="eyebrow">Find me</p>
+          <p class="eyebrow">Say hello</p>
           <h2>Let's talk.</h2>
-          <p class="scene-body">I'm always up for a good systems problem. LinkedIn has the recommendations and the full history; GitHub and Medium show the rest of how I think.</p>
-          <p class="recommend-note">Managers, architects and colleagues have left recommendations on LinkedIn.</p>
+          <p class="scene-body">If you have a hard systems problem, or you just want to compare notes, I would like to hear from you. LinkedIn is the best way to reach me.</p>
           <div class="link-buttons">
             <a class="btn btn-primary" href="https://www.linkedin.com/in/damianperera" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn" href="https://github.com/damianperera" target="_blank" rel="noopener">GitHub</a>
             <a class="btn" href="https://damianperera.medium.com" target="_blank" rel="noopener">Medium</a>
+          </div>
+          <div class="recommend-callout">
+            <h3>Recommendations</h3>
+            <p>People leaders and colleagues I've worked with have left some nice words about me on my LinkedIn profile.</p>
+            <a class="recommend-link" href="https://www.linkedin.com/in/damianperera" target="_blank" rel="noopener">Read them on LinkedIn →</a>
           </div>
         </div>
         <div class="portrait-frame">
@@ -933,30 +1285,40 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <span>Damian Perera · Senior Software Engineer · Munich</span>
+      <span>Damian Perera · Software Engineer · Germany</span>
       <a href="/impressum">Legal Notice</a>
     </div>
   </footer>
 
   <script src="/assets/vendor/gsap/gsap.min.js" defer></script>
-  <script src="/assets/vendor/gsap/ScrollTrigger.min.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var scenes = Array.prototype.slice.call(document.querySelectorAll('main .scene[id]'));
       var navLinks = Array.prototype.slice.call(document.querySelectorAll('.site-header nav a'));
 
-      // active nav link + header visibility via IntersectionObserver (works regardless of GSAP)
-      if ('IntersectionObserver' in window) {
-        var topEl = document.getElementById('top');
-        if (topEl) {
-          var headerObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              document.body.classList.toggle('header-hidden', entry.isIntersecting);
-            });
-          }, { threshold: 0.55 });
-          headerObserver.observe(topEl);
-        }
+      // Header visibility: driven directly off scroll position rather than an
+      // IntersectionObserver on #top. The observer approach was unreliable at
+      // the very top of the page (intersectionRatio can read as 0 before the
+      // first layout/paint has settled), leaving the header wrongly visible
+      // over the hero. A plain scrollY check is simple and correct regardless
+      // of exact hero height: hidden while within the top 60% of a viewport
+      // height, shown once scrolled past that.
+      var headerHiddenTicking = false;
+      function updateHeaderHidden() {
+        headerHiddenTicking = false;
+        document.body.classList.toggle('header-hidden', window.scrollY < window.innerHeight * 0.6);
+      }
+      function requestHeaderHiddenUpdate() {
+        if (headerHiddenTicking) return;
+        headerHiddenTicking = true;
+        window.requestAnimationFrame(updateHeaderHidden);
+      }
+      window.addEventListener('scroll', requestHeaderHiddenUpdate, { passive: true });
+      window.addEventListener('resize', requestHeaderHiddenUpdate);
+      updateHeaderHidden();
 
+      // active nav link via IntersectionObserver (works regardless of GSAP)
+      if ('IntersectionObserver' in window) {
         var navObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
@@ -970,33 +1332,181 @@
       }
 
       var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var isCoarse = window.matchMedia('(pointer: coarse)').matches;
-      var isNarrow = window.innerWidth < 900;
 
-      if (!prefersReduced && !isCoarse && !isNarrow && window.gsap && window.ScrollTrigger) {
-        gsap.registerPlugin(ScrollTrigger);
+      // Chalk-draw animation: shapes draw in (strokeDashoffset 1 -> 0) and text
+      // labels "write on" (left-to-right clip-path reveal), timed on scene-enter.
+      // Runs on desktop AND mobile/touch; only reduced-motion skips it, in which
+      // case elements are left at their CSS defaults (fully drawn/visible).
+      //
+      // Driven by IntersectionObserver rather than GSAP ScrollTrigger: ScrollTrigger
+      // caches trigger pixel-offsets at setup time, and those offsets go stale as
+      // soon as web fonts (Inter/Caveat) finish loading and reflow the page,
+      // without a precisely-timed ScrollTrigger.refresh() the triggers can end up
+      // pointing at the wrong scroll position and never fire. IntersectionObserver
+      // re-evaluates against live layout on every frame, so it has no such timing
+      // dependency and needs no refresh call.
+      if (!prefersReduced && window.gsap && 'IntersectionObserver' in window) {
+        var animScenes = document.querySelectorAll('.scene[data-scene-index]');
 
-        var pinnedScenes = document.querySelectorAll('.scene[data-scene-index]');
-        pinnedScenes.forEach(function (scene) {
-          var paths = scene.querySelectorAll('.chalk-draw');
-          if (!paths.length) return;
-
-          gsap.set(paths, { strokeDasharray: 1, strokeDashoffset: 1 });
-
-          var tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: scene,
-              start: 'top top',
-              end: '+=90%',
-              scrub: true,
-              pin: true,
-              snap: { snapTo: 1, duration: 0.35 }
+        // rootMargin shrinks the effective viewport to its middle band, so a
+        // scene only fires once the user has actually arrived on it (roughly
+        // centered), rather than as soon as it edges into view. Combined with
+        // play-once (unobserve after play) this makes diagrams draw on
+        // arrival, one at a time, instead of several firing together.
+        var drawObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting && entry.target._drawTL) {
+              entry.target._drawTL.play();
+              drawObserver.unobserve(entry.target);
             }
           });
-          tl.to(paths, { strokeDashoffset: 0, ease: 'none', stagger: 0.12 });
+        }, { root: null, rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+
+        animScenes.forEach(function (scene) {
+          var els = Array.prototype.slice.call(
+            scene.querySelectorAll('.chalk-draw, .chalk-text')
+          );
+          if (!els.length) return;
+
+          var shapes = els.filter(function (el) { return el.classList.contains('chalk-draw'); });
+          var texts = els.filter(function (el) { return el.classList.contains('chalk-text'); });
+
+          gsap.set(shapes, { strokeDasharray: 1, strokeDashoffset: 1 });
+          // horizontal labels clip-reveal left-to-right; rotated labels (data-clip-rect)
+          // reveal bottom-up via an SVG clip rect that grows upward (deterministic).
+          texts.forEach(function (t) {
+            var rid = t.getAttribute('data-clip-rect');
+            if (rid) {
+              var rr = document.getElementById(rid);
+              if (rr) {
+                t.setAttribute('data-rw', rr.getAttribute('width'));
+                gsap.set(rr, { attr: { width: 0 } });
+              }
+            } else {
+              gsap.set(t, { clipPath: 'inset(0% 100% 0% 0%)', webkitClipPath: 'inset(0% 100% 0% 0%)' });
+            }
+          });
+
+          // Arrowheads are painted at a path's end instantly, so hide them until
+          // the line that carries them has actually been drawn.
+          shapes.forEach(function (sh) {
+            var m = sh.getAttribute('marker-end');
+            if (m && m !== 'none') { sh.setAttribute('data-marker-end', m); sh.setAttribute('marker-end', 'none'); }
+          });
+
+          // Total draw time target ~3.0-6.0s, staggered across shapes+text
+          // in the order they appear in the markup (which already interleaves
+          // each shape with its own label), so a label starts writing right
+          // as its shape finishes. Kept deliberately slow so the hand-drawn
+          // feel actually reads while scrolling.
+          var n = els.length;
+          var totalDuration = Math.min(6.0, Math.max(3.0, n * 0.55));
+          var step = totalDuration / n;
+
+          var tl = gsap.timeline({ paused: true });
+
+          els.forEach(function (el, i) {
+            var isText = el.classList.contains('chalk-text');
+            var dur = isText
+              ? Math.min(1.3, Math.max(0.9, step * 1.2))
+              : Math.min(1.0, Math.max(0.7, step * 1.2));
+            var pos = i * step;
+            if (isText) {
+              var rid = el.getAttribute('data-clip-rect');
+              if (rid) {
+                // rotated label: grow its SVG clip rect upward = writes bottom to top
+                var rr = document.getElementById(rid);
+                if (rr) {
+                  tl.to(rr, {
+                    attr: { width: parseFloat(el.getAttribute('data-rw')) },
+                    ease: 'power2.out',
+                    duration: dur
+                  }, pos);
+                }
+              } else {
+                tl.to(el, {
+                  clipPath: 'inset(0% 0% 0% 0%)',
+                  webkitClipPath: 'inset(0% 0% 0% 0%)',
+                  ease: 'power2.out',
+                  duration: dur
+                }, pos);
+                // drop the clip once written so handwriting glyph overhangs (the
+                // tail of the last letter) are never cut off.
+                tl.set(el, { clipPath: 'none', webkitClipPath: 'none' }, pos + dur);
+              }
+            } else {
+              tl.to(el, {
+                strokeDashoffset: 0,
+                ease: 'power2.out',
+                duration: dur
+              }, pos);
+              var mk = el.getAttribute('data-marker-end');
+              if (mk) { tl.set(el, { attr: { 'marker-end': mk } }, pos + dur); }
+            }
+          });
+
+          scene._drawTL = tl;
+          drawObserver.observe(scene);
         });
 
-        ScrollTrigger.refresh();
+        // Career: companies rise in from below, and downward sketched arrows
+        // are drawn between the logos, when the section is reached.
+        var careerWrap = document.querySelector('.career-wrap');
+        if (careerWrap) {
+          var careerBuilt = false;
+          var careerObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (en) {
+              if (!en.isIntersecting || careerBuilt) return;
+              careerBuilt = true;
+              buildCareer(careerWrap);
+            });
+          }, { root: null, rootMargin: '-22% 0px -22% 0px', threshold: 0 });
+          careerObs.observe(careerWrap);
+        }
+
+        function buildCareer(wrap) {
+          var list = wrap.querySelector('.career-list');
+          var rail = wrap.querySelector('.career-rail');
+          var chips = Array.prototype.slice.call(list.querySelectorAll('.career-logo-chip'));
+          var cards = Array.prototype.slice.call(list.querySelectorAll('.career-card'));
+          var wr = wrap.getBoundingClientRect();
+          rail.setAttribute('viewBox', '0 0 ' + Math.round(wr.width) + ' ' + Math.round(wr.height));
+          rail.setAttribute('preserveAspectRatio', 'none');
+          var pts = chips.map(function (ch) {
+            var r = ch.getBoundingClientRect();
+            return { x: r.left - wr.left + r.width / 2, y: r.top - wr.top + r.height / 2, r: r.height / 2 };
+          });
+          wrap.classList.add('rail-js');
+          var n = cards.length;
+          var step = 0.45;
+          var tl = gsap.timeline();
+          gsap.set(cards, { opacity: 0, y: 26 });
+          // reveal from the earliest role (top) down to the present (bottom)
+          cards.forEach(function (card, i) {
+            tl.to(card, { opacity: 1, y: 0, duration: 0.55, ease: 'power2.out' }, i * step);
+          });
+          // short downward sketched arrows: earliest (top) flowing to latest (bottom)
+          for (var i = 0; i < pts.length - 1; i++) {
+            var upper = pts[i], lower = pts[i + 1];
+            var yTail = upper.y + upper.r + 18;
+            var yHead = lower.y - lower.r - 18;
+            var my = ((yTail + yHead) / 2).toFixed(1);
+            var d = 'M' + upper.x + ' ' + yTail +
+                    ' C' + (upper.x - 5) + ' ' + my + ', ' + (lower.x + 5) + ' ' + my + ', ' + lower.x + ' ' + yHead +
+                    ' l -6 -9 m 6 9 l 6 -9';
+            var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            p.setAttribute('d', d);
+            p.setAttribute('fill', 'none');
+            p.setAttribute('stroke', 'var(--chalk-muted)');
+            p.setAttribute('stroke-width', '2');
+            p.setAttribute('stroke-linecap', 'round');
+            p.setAttribute('stroke-linejoin', 'round');
+            p.setAttribute('pathLength', '1');
+            rail.appendChild(p);
+            gsap.set(p, { strokeDasharray: 1, strokeDashoffset: 1 });
+            tl.to(p, { strokeDashoffset: 0, duration: 0.5, ease: 'power2.out' }, i * step + 0.28);
+          }
+        }
       }
     });
   </script>
