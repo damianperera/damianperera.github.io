@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0b1020" />
+  <meta name="theme-color" content="#14161a" />
 
   <title>Legal Notice | Damian Perera</title>
   <meta
@@ -50,10 +50,6 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  />
 
   <script type="application/ld+json">
   {
@@ -81,71 +77,68 @@
 
   <style>
     :root {
-      --bg: #070b14;
-      --panel: rgba(16, 22, 38, 0.8);
-      --panel-strong: rgba(18, 25, 44, 0.92);
-      --line: rgba(255, 255, 255, 0.08);
-      --line-strong: rgba(255, 255, 255, 0.14);
-      --text: #eef2ff;
-      --text-soft: #d8e0ef;
-      --muted: #aab6ca;
-      --accent: #7c9cff;
-      --accent-2: #67e8f9;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-      --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --container: 1040px;
+      --bg: #14161a;
+      --bg-panel: #191c21;
+      --chalk: #eae7df;
+      --chalk-strong: rgba(234, 231, 223, 0.92);
+      --chalk-muted: #a7a49b;
+      --amber: #e8b04b;
+      --grid-line: rgba(234, 231, 223, 0.05);
+      --header-h: 60px;
+      --maxw: 1040px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
+      background: var(--bg);
+      scroll-padding-top: calc(var(--header-h) + 16px);
     }
 
     body {
       margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 15% 20%, rgba(124, 156, 255, 0.16), transparent 0 28%),
-        radial-gradient(circle at 85% 12%, rgba(103, 232, 249, 0.12), transparent 0 22%),
-        radial-gradient(circle at 50% 100%, rgba(124, 156, 255, 0.08), transparent 0 30%),
-        linear-gradient(180deg, #060911 0%, #090e18 45%, #070b14 100%);
+      background: var(--bg);
+      color: var(--chalk);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
+    /* faint board grid, purely decorative, fixed */
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-      background-size: 38px 38px;
-      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0));
       z-index: 0;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 56px 56px;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(ellipse at 50% 34%, transparent 55%, rgba(0, 0, 0, 0.35) 100%);
     }
 
-    a:hover {
-      color: var(--accent-2);
-    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    ul { margin: 0; padding: 0; list-style: none; }
+    p { margin: 0; }
+    h1, h2, h3, h4 { margin: 0; }
 
     .container {
-      width: min(var(--container), calc(100% - 40px));
+      width: min(var(--maxw), calc(100% - 40px));
       margin: 0 auto;
       position: relative;
-      z-index: 1;
+      z-index: 2;
     }
 
     .skip-link {
@@ -153,114 +146,92 @@
       left: -999px;
       top: -999px;
     }
-
     .skip-link:focus {
       left: 12px;
       top: 12px;
       z-index: 2000;
-      background: #fff;
-      color: #000;
+      background: var(--chalk);
+      color: #14161a;
       padding: 10px 14px;
-      border-radius: 10px;
+      border-radius: 8px;
     }
 
+    /* ---------- header ---------- */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      background: rgba(20, 22, 26, 0.72);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--grid-line);
+    }
+    .header-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.01em;
+      color: var(--chalk);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .back-link {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--chalk-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.25s ease;
+    }
+    .back-link:hover, .back-link:focus-visible { color: var(--chalk); }
+
+    /* ---------- page ---------- */
     .page {
-      padding: 28px 0 56px;
+      position: relative;
+      z-index: 2;
+      padding: calc(var(--header-h) + 20px) 0 40px;
     }
 
     .hero {
-      padding: 12px 0 22px;
-    }
-
-    .hero-panel,
-    .content-panel,
-    .toc-panel,
-    .legal-card {
-      position: relative;
-      background: linear-gradient(180deg, rgba(19, 26, 44, 0.82), rgba(12, 17, 30, 0.78));
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      backdrop-filter: blur(18px);
-    }
-
-    .hero-panel::after,
-    .content-panel::after,
-    .toc-panel::after,
-    .legal-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(124, 156, 255, 0.08), transparent 40%, transparent 60%, rgba(103, 232, 249, 0.05));
-      pointer-events: none;
-    }
-
-    .hero-panel {
-      padding: 34px;
-      text-align: left;
+      padding: 20px 0 8px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent-2);
-      font-size: 12px;
-      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--amber);
       margin-bottom: 14px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 30px;
-      height: 1px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-    }
-
-    h1, h2, h3, h4 {
-      margin: 0;
-      letter-spacing: -0.03em;
     }
 
     h1 {
-      font-size: clamp(36px, 6vw, 58px);
-      line-height: 1.02;
-      margin-top:
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-size: clamp(24px, 4vw, 32px);
-      margin-bottom: 10px;
-    }
-
-    h3 {
-      font-size: 18px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      color: var(--text);
-    }
-
-    h4 {
-      font-size: 15px;
-      margin-top: 15px;
-      margin-bottom: 5px;
-      color: var(--text-soft);
-    }
-
-    p {
-      margin: 0;
-      color: var(--text-soft);
-      line-height: 1.8;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--chalk);
+      margin-bottom: 16px;
     }
 
     .hero-lead {
-      font-size: 17px;
-      color: var(--muted);
-      margin-bottom: 22px;
-      margin-top: 10px;
+      font-size: clamp(1rem, 1.6vw, 1.1rem);
+      line-height: 1.7;
+      color: var(--chalk-muted);
+      margin-bottom: 24px;
     }
 
     .hero-actions {
@@ -269,103 +240,128 @@
       gap: 12px;
     }
 
-    .button-primary,
-    .button-secondary {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 14px;
+      min-height: 44px;
+      padding: 0 22px;
+      border-radius: 6px;
       font-weight: 600;
-      transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 1px solid var(--grid-line);
+      color: var(--chalk-strong);
+      transition: border-color 0.25s ease, background 0.25s ease, color 0.25s ease;
+    }
+    .btn:hover, .btn:focus-visible { border-color: var(--chalk-muted); color: var(--chalk); }
+    .btn-primary {
+      background: var(--amber);
+      color: #14161a;
+      border-color: var(--amber);
+    }
+    .btn-primary:hover, .btn-primary:focus-visible {
+      background: #f0bd63;
+      border-color: #f0bd63;
+      color: #14161a;
     }
 
-    .button-primary {
-      background: #2e1a69;
-      color: white;
-      box-shadow: 0 14px 32px rgba(124, 156, 255, 0.10);
-    }
-
-    .button-secondary {
-      border: 1px solid var(--line-strong);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text);
-    }
-
-    .button-primary:hover,
-    .button-secondary:hover {
-      transform: translateY(-1px);
-      color: white;
-    }
-
-    .section {
-      padding: 18px 0 0;
-    }
+    /* ---------- layout ---------- */
+    .section { padding: 26px 0 0; }
 
     .legal-layout {
       display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 18px;
+      grid-template-columns: 240px 1fr;
+      gap: 22px;
       align-items: start;
     }
 
+    /* ---------- table of contents ---------- */
     .toc-panel {
-      padding: 22px;
       position: sticky;
-      top: 20px;
+      top: calc(var(--header-h) + 16px);
+      padding: 22px 20px;
+      border: 1px solid var(--grid-line);
+      background: var(--bg-panel);
+      border-radius: 10px 6px 12px 8px;
     }
-
     .toc-title {
-      font-size: 14px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--accent-2);
+      color: var(--amber);
       margin-bottom: 14px;
     }
-
     .toc {
       display: grid;
-      gap: 8px;
+      gap: 4px;
     }
-
     .toc a {
       display: block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--text-soft);
-      background: rgba(255,255,255,0.02);
+      padding: 9px 12px;
+      border-radius: 8px;
+      color: var(--chalk-muted);
       border: 1px solid transparent;
-      font-size: 14px;
-      transition: 0.2s ease;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+    .toc a:hover, .toc a:focus-visible {
+      color: var(--chalk);
+      background: rgba(234, 231, 223, 0.04);
+      border-color: var(--grid-line);
     }
 
-    .toc a:hover {
-      border-color: rgba(124,156,255,0.18);
-      background: rgba(124,156,255,0.08);
-      color: var(--text);
-    }
-
-    .content-panel {
-      padding: 22px;
-    }
-
+    /* ---------- legal cards (modeled on the recommendations callout) ---------- */
     .legal-stack {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
     .legal-card {
-      padding: 24px;
-      background: rgba(255,255,255,0.045);
+      border: 1px solid var(--grid-line);
+      border-left: 3px solid var(--amber);
+      background: var(--bg-panel);
+      border-radius: 8px;
+      padding: 26px 28px;
+      scroll-margin-top: calc(var(--header-h) + 16px);
+    }
+
+    .legal-card h2 {
+      font-weight: 800;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--chalk);
+      margin-bottom: 14px;
+    }
+    .legal-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--chalk);
+      margin-top: 18px;
+      margin-bottom: 6px;
+    }
+    .legal-card h4 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-top: 18px;
+      margin-bottom: 6px;
     }
 
     .legal-card p,
     .legal-card li,
     .legal-card address {
-      color: var(--text-soft);
+      font-size: 0.96rem;
+      line-height: 1.75;
+      color: var(--chalk-muted);
     }
+    .legal-card p b,
+    .legal-card li b { color: var(--chalk-strong); font-weight: 600; }
 
     .legal-card p + p,
     .legal-card p + ul,
@@ -378,118 +374,105 @@
     }
 
     .legal-card ul {
-      margin: 12px 0 0;
+      margin-top: 12px;
       padding-left: 18px;
-      line-height: 1.8;
+      list-style: disc;
     }
-
-    .legal-card li + li {
-      margin-top: 8px;
-    }
+    .legal-card li { margin-left: 2px; }
+    .legal-card li + li { margin-top: 8px; }
 
     address {
       font-style: normal;
-      line-height: 1.8;
+      line-height: 1.75;
     }
 
-    .footer {
-      padding: 28px 0 18px;
-      color: var(--muted);
-      font-size: 14px;
+    .legal-card a {
+      color: var(--amber);
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+      transition: color 0.2s ease, text-decoration-style 0.2s ease;
+    }
+    .legal-card a:hover, .legal-card a:focus-visible {
+      color: var(--chalk);
+      text-decoration-style: solid;
     }
 
+    /* ---------- footer ---------- */
+    .site-footer {
+      position: relative;
+      z-index: 2;
+      margin-top: 40px;
+      border-top: 1px solid var(--grid-line);
+      padding: 26px 0 34px;
+    }
     .footer-inner {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      width: min(var(--maxw), calc(100% - 40px));
       display: flex;
-      justify-content: space-between;
-      gap: 16px;
       flex-wrap: wrap;
+      gap: 8px 20px;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--chalk-muted);
     }
+    .site-footer a {
+      color: var(--chalk-muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .site-footer a:hover, .site-footer a:focus-visible { color: var(--chalk); }
 
+    /* ---------- subtle reveal (fade only; no chalk sketching) ---------- */
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(14px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
     }
-
     .reveal.is-visible {
       opacity: 1;
       transform: translateY(0);
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
 
-    @media (max-width: 920px) {
-      .legal-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .toc-panel {
-        position: relative;
-        top: 0;
-      }
+    /* ---------- responsive ---------- */
+    @media (max-width: 900px) {
+      .legal-layout { grid-template-columns: 1fr; }
+      .toc-panel { position: relative; top: 0; }
     }
 
-    @media (max-width: 780px) {
-      .container {
-        width: min(var(--container), calc(100% - 24px));
-      }
-
-      .page {
-        padding: 18px 0 40px;
-      }
-
-      .hero-panel,
-      .toc-panel,
-      .content-panel,
-      .legal-card {
-        padding: 20px;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-      }
-
-      .button-primary,
-      .button-secondary {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-      }
+    @media (max-width: 600px) {
+      .container { width: min(var(--maxw), calc(100% - 28px)); }
+      .footer-inner { width: min(var(--maxw), calc(100% - 28px)); }
+      .legal-card { padding: 22px 20px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
     }
-    .legal-card a {
-      color: #a289ef; font-weight: 500;
-      text-decoration: underline; text-decoration-style: dotted;
-      text-underline-offset: 3px;
-      border-bottom: none;
-      transition: color .2s, text-decoration-style .2s;
-    }
-    .legal-card a:hover { color: var(--text); text-decoration-style: solid; }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/">Damian Perera</a>
+      <a class="back-link" href="/" onclick="if(history.length>1){history.back();return false;}">&larr; Back to site</a>
+    </div>
+  </header>
+
   <main id="main" class="page">
     <section class="hero">
       <div class="container">
-        <section class="hero-panel reveal" aria-labelledby="page-title">
+        <div class="reveal" aria-labelledby="page-title">
           <p class="eyebrow">Legal Notice</p>
           <h1 id="page-title">Imprint and provider information.</h1>
           <p class="hero-lead">
@@ -498,16 +481,10 @@
           </p>
 
           <div class="hero-actions">
-            <a class="button-primary" href="#responsible-person">
-              <i class="bi bi-person-badge"></i>
-              Responsible Person
-            </a>
-            <a class="button-secondary" href="#scope">
-              <i class="bi bi-journal-text"></i>
-              Scope of Notice
-            </a>
+            <a class="btn btn-primary" href="#responsible-person">Responsible Person</a>
+            <a class="btn" href="#scope">Scope of Notice</a>
           </div>
-        </section>
+        </div>
       </div>
     </section>
 
@@ -529,180 +506,178 @@
             </nav>
           </aside>
 
-          <div class="content-panel reveal">
-            <div class="legal-stack">
-              <section class="legal-card" id="responsible-person">
-                <h2>Responsible Person</h2>
-                <h3>Damian Perera</h3>
-                <address>
-                  c/o Online-Impressum #7694<br />
-                  Europaring 90<br />
-                  53757 Sankt Augustin<br />
-                  Germany
-                </address>
+          <div class="legal-stack">
+            <section class="legal-card reveal" id="responsible-person">
+              <h2>Responsible Person</h2>
+              <h3>Damian Perera</h3>
+              <address>
+                c/o Online-Impressum #7694<br />
+                Europaring 90<br />
+                53757 Sankt Augustin<br />
+                Germany
+              </address>
 
-                <h4>Primary Contact</h4>
-                <p>Email: <a href="mailto:damianperera@mail.online-impressum.de">damianperera@mail.online-impressum.de</a></p>
+              <h4>Primary Contact</h4>
+              <p>Email: <a href="mailto:damianperera@mail.online-impressum.de">damianperera@mail.online-impressum.de</a></p>
 
-                <h4>Second Contact Channel</h4>
-                <p>
-                  A second direct contact route is available for legal and regulatory purposes pursuant to
-                  § 5 para. 1 no. 2 DDG at <a href="https://mein.online-impressum.de/damian-perera/">online-impressum.de <i class="bi bi-arrow-up-right-circle-fill"></i></a>
-                </p>
-              </section>
+              <h4>Second Contact Channel</h4>
+              <p>
+                A second direct contact route is available for legal and regulatory purposes pursuant to
+                § 5 para. 1 no. 2 DDG at <a href="https://mein.online-impressum.de/damian-perera/">online-impressum.de &#8599;</a>
+              </p>
+            </section>
 
-              <section class="legal-card" id="supervisory-authority">
-                <h2>Supervisory Authority</h2>
-                <p>
-                  Pursuant to § 55 para. 2 RStV and § 18 MStV, the responsible supervisory and regulatory authority is:
-                </p>
+            <section class="legal-card reveal" id="supervisory-authority">
+              <h2>Supervisory Authority</h2>
+              <p>
+                Pursuant to § 55 para. 2 RStV and § 18 MStV, the responsible supervisory and regulatory authority is:
+              </p>
 
-                <h3>Bayerische Landeszentrale für neue Medien (BLM)</h3>
-                <address>
-                  Heinrich-Lübke-Str. 27<br />
-                  81737 München<br />
-                  Germany
-                </address>
-              </section>
+              <h3>Bayerische Landeszentrale für neue Medien (BLM)</h3>
+              <address>
+                Heinrich-Lübke-Str. 27<br />
+                81737 München<br />
+                Germany
+              </address>
+            </section>
 
-              <section class="legal-card" id="scope">
-                <h2>Scope of this Notice</h2>
-                <p>
-                  This legal notice covers all digital services and apps operated by Damian Perera, including but not limited to:
-                </p>
+            <section class="legal-card reveal" id="scope">
+              <h2>Scope of this Notice</h2>
+              <p>
+                This legal notice covers all digital services and apps operated by Damian Perera, including but not limited to:
+              </p>
 
-                <ul>
-                  <li><b>perera.io</b>, <b>damian.perera.io</b> - Main websites</li>
-                  <li><b>api.perera.io</b> - API services</li>
-                  <li><b>Tank Radar</b> - iOS app (paid download in certain regions)</li>
-                </ul>
+              <ul>
+                <li><b>perera.io</b>, <b>damian.perera.io</b> - Main websites</li>
+                <li><b>api.perera.io</b> - API services</li>
+                <li><b>Tank Radar</b> - iOS app (paid download in certain regions)</li>
+              </ul>
 
-                <p>
-                  Any additional app or service operated by Damian Perera that links to this page is also covered by this notice.
-                </p>
-              </section>
+              <p>
+                Any additional app or service operated by Damian Perera that links to this page is also covered by this notice.
+              </p>
+            </section>
 
-              <section class="legal-card" id="liability-content">
-                <h2>Liability for Content</h2>
+            <section class="legal-card reveal" id="liability-content">
+              <h2>Liability for Content</h2>
 
-                <h3>Own Content</h3>
-                <p>
-                  As a service provider I am responsible for my own content on these pages in accordance with
-                  § 7 para. 1 DDG. Obligations to remove or block information under general law remain unaffected;
-                  liability in this respect only arises from the point at which a concrete infringement becomes known.
-                  Upon notification I will remove any infringing content immediately.
-                </p>
+              <h3>Own Content</h3>
+              <p>
+                As a service provider I am responsible for my own content on these pages in accordance with
+                § 7 para. 1 DDG. Obligations to remove or block information under general law remain unaffected;
+                liability in this respect only arises from the point at which a concrete infringement becomes known.
+                Upon notification I will remove any infringing content immediately.
+              </p>
 
-                <h3>Third-Party Data and APIs</h3>
-                <p>
-                  The apps and services listed above may display data sourced from third-party providers and public APIs
-                  (including but not limited to price data, mapping data, and geolocation services). I do not guarantee
-                  the accuracy, completeness, or timeliness of such data. Responsibility for the content of third-party
-                  data sources lies with their respective providers. Pursuant to §§ 8–10 DDG, I am not obliged to monitor
-                  or verify third-party information on an ongoing basis.
-                </p>
+              <h3>Third-Party Data and APIs</h3>
+              <p>
+                The apps and services listed above may display data sourced from third-party providers and public APIs
+                (including but not limited to price data, mapping data, and geolocation services). I do not guarantee
+                the accuracy, completeness, or timeliness of such data. Responsibility for the content of third-party
+                data sources lies with their respective providers. Pursuant to §§ 8–10 DDG, I am not obliged to monitor
+                or verify third-party information on an ongoing basis.
+              </p>
 
-                <h3>App Store and Platform Content</h3>
-                <p>
-                  Apps are distributed via the Apple App Store. Apple Inc. operates and is responsible for the App Store
-                  platform. I have no influence over App Store platform content, reviews, or related third-party materials
-                  beyond my own app listings.
-                </p>
-              </section>
+              <h3>App Store and Platform Content</h3>
+              <p>
+                Apps are distributed via the Apple App Store. Apple Inc. operates and is responsible for the App Store
+                platform. I have no influence over App Store platform content, reviews, or related third-party materials
+                beyond my own app listings.
+              </p>
+            </section>
 
-              <section class="legal-card" id="liability-links">
-                <h2>Liability for Links</h2>
-                <p>
-                  My services may contain links to external third-party websites over whose content I have no control.
-                  I therefore accept no liability for such content. The respective provider or operator of linked pages
-                  is always responsible for their content. Linked pages were checked for possible legal violations at the
-                  time of linking; no illegal content was identifiable at that time. Ongoing monitoring without concrete
-                  evidence of a violation is not reasonable. Upon notification of any infringement I will remove the
-                  relevant links immediately.
-                </p>
-              </section>
+            <section class="legal-card reveal" id="liability-links">
+              <h2>Liability for Links</h2>
+              <p>
+                My services may contain links to external third-party websites over whose content I have no control.
+                I therefore accept no liability for such content. The respective provider or operator of linked pages
+                is always responsible for their content. Linked pages were checked for possible legal violations at the
+                time of linking; no illegal content was identifiable at that time. Ongoing monitoring without concrete
+                evidence of a violation is not reasonable. Upon notification of any infringement I will remove the
+                relevant links immediately.
+              </p>
+            </section>
 
-              <section class="legal-card" id="copyright">
-                <h2>Copyright</h2>
-                <p>
-                  The content and works published under the services listed above are subject to German copyright law
-                  (Urheberrechtsgesetz). Reproduction, processing, distribution, or any form of commercial use beyond
-                  the scope of copyright law requires the prior written consent of the respective author or creator.
-                  Downloads and copies are permitted for private, non-commercial use only. Where third-party content
-                  appears, the copyright of the respective owner is acknowledged.
-                </p>
-              </section>
+            <section class="legal-card reveal" id="copyright">
+              <h2>Copyright</h2>
+              <p>
+                The content and works published under the services listed above are subject to German copyright law
+                (Urheberrechtsgesetz). Reproduction, processing, distribution, or any form of commercial use beyond
+                the scope of copyright law requires the prior written consent of the respective author or creator.
+                Downloads and copies are permitted for private, non-commercial use only. Where third-party content
+                appears, the copyright of the respective owner is acknowledged.
+              </p>
+            </section>
 
-              <section class="legal-card" id="app-notice">
-                <h2>App-Specific Notice</h2>
+            <section class="legal-card reveal" id="app-notice">
+              <h2>App-Specific Notice</h2>
 
-                <h3>Paid Downloads</h3>
-                <p>
-                  Tank Radar is distributed as a paid download in certain regions on the Apple App Store.
-                  No in-app purchases or subscriptions are offered. All app purchases are processed exclusively
-                  by Apple Inc. under Apple's Terms of Sale; I have no access to payment data and am not a party
-                  to the payment transaction.
-                </p>
+              <h3>Paid Downloads</h3>
+              <p>
+                Tank Radar is distributed as a paid download in certain regions on the Apple App Store.
+                No in-app purchases or subscriptions are offered. All app purchases are processed exclusively
+                by Apple Inc. under Apple's Terms of Sale; I have no access to payment data and am not a party
+                to the payment transaction.
+              </p>
 
-                <h3>Privacy Policies</h3>
-                <p>
-                  Each app provides its own privacy policy, accessible from within the app and on the respective
-                  App Store product page. This legal notice does not substitute those per-app privacy disclosures.
-                </p>
+              <h3>Privacy Policies</h3>
+              <p>
+                Each app provides its own privacy policy, accessible from within the app and on the respective
+                App Store product page. This legal notice does not substitute those per-app privacy disclosures.
+              </p>
 
-                <h3>Availability</h3>
-                <p>
-                  App availability, pricing, and distribution are subject to Apple App Store terms and may vary by region.
-                  I reserve the right to update, modify, or discontinue apps at any time.
-                </p>
-              </section>
+              <h3>Availability</h3>
+              <p>
+                App availability, pricing, and distribution are subject to Apple App Store terms and may vary by region.
+                I reserve the right to update, modify, or discontinue apps at any time.
+              </p>
+            </section>
 
-              <section class="legal-card" id="dispute-resolution">
-                <h2>Dispute Resolution</h2>
+            <section class="legal-card reveal" id="dispute-resolution">
+              <h2>Dispute Resolution</h2>
 
-                <h3>EU Online Dispute Resolution</h3>
-                <p>
-                  The European Commission provides a platform for online dispute resolution (ODR) at
-                  <a href="https://consumer-redress.ec.europa.eu/" target="_blank" rel="noopener noreferrer">
-                    consumer-redress.ec.europa.eu <i class="bi bi-arrow-up-right-circle-fill"></i>
-                  </a>
-                </p>
+              <h3>EU Online Dispute Resolution</h3>
+              <p>
+                The European Commission provides a platform for online dispute resolution (ODR) at
+                <a href="https://consumer-redress.ec.europa.eu/" target="_blank" rel="noopener noreferrer">
+                  consumer-redress.ec.europa.eu &#8599;
+                </a>
+              </p>
 
-                <h3>Consumer Arbitration</h3>
-                <p>
-                  I am neither obliged nor willing to participate in dispute resolution proceedings before a consumer
-                  arbitration board (§ 36 VSBG).
-                </p>
-              </section>
+              <h3>Consumer Arbitration</h3>
+              <p>
+                I am neither obliged nor willing to participate in dispute resolution proceedings before a consumer
+                arbitration board (§ 36 VSBG).
+              </p>
+            </section>
 
-              <section class="legal-card" id="eu-dsa">
-                <h2>EU Digital Services Act</h2>
-                <p>
-                  Pursuant to Articles 30 and 31 of the EU Digital Services Act (DSA, Regulation (EU) 2022/2065),
-                  the following trader contact information is disclosed for apps distributed on the App Store in the
-                  European Union:
-                </p>
+            <section class="legal-card reveal" id="eu-dsa">
+              <h2>EU Digital Services Act</h2>
+              <p>
+                Pursuant to Articles 30 and 31 of the EU Digital Services Act (DSA, Regulation (EU) 2022/2065),
+                the following trader contact information is disclosed for apps distributed on the App Store in the
+                European Union:
+              </p>
 
-                <h3>Name</h3>
-                <p>Damian Perera</p>
+              <h3>Name</h3>
+              <p>Damian Perera</p>
 
-                <h3>Address</h3>
-                <address>
-                  Damian Perera<br />
-                  c/o Online-Impressum #7694<br />
-                  Europaring 90<br />
-                  53757 Sankt Augustin<br />
-                  Germany
-                </address>
-              </section>
-            </div>
+              <h3>Address</h3>
+              <address>
+                Damian Perera<br />
+                c/o Online-Impressum #7694<br />
+                Europaring 90<br />
+                53757 Sankt Augustin<br />
+                Germany
+              </address>
+            </section>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="container footer-inner">
+    <footer class="site-footer">
+      <div class="footer-inner">
         <div>Last updated on April 21, 2026</div>
       </div>
     </footer>
@@ -710,19 +685,23 @@
 
   <script>
     (function () {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (reduce || !("IntersectionObserver" in window)) {
+        document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("is-visible"); });
+        return;
+      }
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               entry.target.classList.add("is-visible");
               observer.unobserve(entry.target);
             }
           });
         },
-        { threshold: 0.14 }
+        { threshold: 0.12 }
       );
-
-      document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+      document.querySelectorAll(".reveal").forEach(function (el) { observer.observe(el); });
     })();
   </script>
 </body>
